@@ -1,0 +1,147 @@
+<div class="page position-absolute t-0 w-100" id="noticias-y-eventos">
+    <div class="row no-gutters minh-100vh">
+        <div class="col-lg-9 order-1 order-lg-0 page-content pt-lg-0">
+
+            <app-menu [paginas]="paginas" (current)="setCurrent($event)" ></app-menu>
+            <app-menu-mobile *ngIf="showMenuMovil" [paginas]="current" (closeMenu)="cerrarMenu($event)"></app-menu-mobile>
+            <div class="accesibilidad col-lg-9">
+                <app-inclusion display="up"></app-inclusion>
+            </div>
+            <!-- ============================================-->
+            <!-- <section> begin ============================-->
+            <section class="pt-5 pt-xl-7 pt-xxl-8">
+
+                <div class="container-fluid">
+                    <div class="row justify-content-center pb-5">
+                        <div class="col-lg-10">
+                            <div class="text-center mb-5 mb-lg-6">
+                                <h2 class="fs-2 fs-sm-3"> <span class="font-weight-medium">Frequently Asked </span>
+                                    Questions</h2>
+                                <hr class="hr-ornate" />
+                            </div>
+                            <div class="row">
+                                <div class="ui styled fluid accordion mt-4 border-0" data-options='{"exclusive":false}'>
+                                    <h5 class="title active"><span class="fas fa-plus mr-1 text-800"
+                                            data-fa-transform="shrink-6 down-1.5"></span> What is Boots4?</h5>
+                                    <div class="content pl-5 active">
+                                        <p>
+                                            Bootst4 is a first Bootstrap 4 premium template. It is published in 1896 by
+                                            talented Boots4 Team. It is also called most popular Bootsrap template in
+                                            the world. The unique layout and clean design are the main reason of its
+                                            populairity. At first Boots4
+                                            was published and get the top popularity among the web designer all over the
+                                            world. After this version 2 is published and keep its popularity. Lorem
+                                            ipsum dolor sit amet consectetur adipisicing elit. Atque eligendi, nostrum
+                                            sint, quis inventore molestiae porro sit aut unde accusantium neque earum
+                                            dolor exercitationem architecto repellendus nobis aspernatur sapiente
+                                            dolores? Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                            Consectetur
+                                            ratione laudantium accusamus, quibusdam odio ipsam blanditiis doloribus eius
+                                            in delectus, corrupti mollitia vel nam! Aperiam doloremque dolore dicta quod
+                                            ipsam!
+                                        </p>
+                                    </div>
+                                    <h5 class="title"><span class="fas fa-plus mr-1 text-800"
+                                            data-fa-transform="shrink-6 down-1.5"></span>
+                                        <div class="d-inline-block mb-0">Why should I use Boots4?</div>
+                                    </h5>
+                                    <div class="content pl-5">
+                                        <p>There are many reason to use Boots4 Template. Unique layout design, smooth
+                                            animation and clean ui design are the most important features of Boots4
+                                            Bootsrap Template.</p>
+                                    </div>
+                                    <h5 class="title"><span class="fas fa-plus mr-1 text-800"
+                                            data-fa-transform="shrink-6 down-1.5"></span>
+                                        <div class="d-inline-block mb-0">How to get Boots4?</div>
+                                    </h5>
+                                    <div class="content pl-5">
+                                        <p>You can get Boots4 template from ThemeWagon. Where you also get quality free
+                                            and premium templates</p>
+                                        <p>A template site may be the most convenient way to buy a template. Buying a
+                                            template from a private owner allows you to assess the pedigree and
+                                            upbringing of your template before choosing to take it home. Lastly, finding
+                                            your
+                                            template from a shelter, helps give a good home to a template which may not
+                                            find one so readily.</p>
+                                    </div>
+                                    <h5 class="title"><span class="fas fa-plus mr-1 text-800"
+                                            data-fa-transform="shrink-6 down-1.5"></span>
+                                        <div class="d-inline-block mb-0">What are the features of Boots4?</div>
+                                    </h5>
+                                    <div class="content pl-5">
+                                        <p>There are many features in Boots4 Template. Unique layout design, smooth
+                                            animation and clean ui design are the most important features of Boots4
+                                            Bootsrap Template.</p>
+                                    </div>
+                                    <h5 class="title"><span class="fas fa-plus mr-1 text-800"
+                                            data-fa-transform="shrink-6 down-1.5"></span>
+                                        <div class="d-inline-block mb-0">Write ten sentences about Boots4.</div>
+                                    </h5>
+                                    <div class="content pl-5">
+                                        <p>There are many features in Boots4 Template. Unique layout design, smooth
+                                            animation and clean ui design are the most important features of Boots4
+                                            Bootsrap Template.</p>
+                                    </div>
+                                    <h5 class="title"><span class="fas fa-plus mr-1 text-800"
+                                            data-fa-transform="shrink-6 down-1.5"></span>
+                                        <div class="d-inline-block mb-0">What are the differences between Boots4 v2 and
+                                            v3?</div>
+                                    </h5>
+                                    <div class="content pl-5">
+                                        <p>There are many features in Boots4 Template. Unique layout design, smooth
+                                            animation and clean ui design are the most important features of Boots4
+                                            Bootsrap Template.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of .container-->
+
+            </section>
+            <!-- <section> close ============================-->
+            <!-- ============================================-->
+
+
+            <footer class="page-footer">
+                <div class="bg-holder"
+                    style="background-image:url(assets/img/sidebars/faq.jpg);background-position: 0 51%; transform: scale(1.1);">
+                </div>
+                <!--/.bg-holder-->
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 text-lg-left">
+                                <p class="fs--1 text-uppercase ls font-weight-bold mb-0">
+                                    Copyright &copy; 2018 Boots4&trade; inc.</p>
+                            </div>
+                            <div class="col-lg-6 text-lg-right mt-2 mt-lg-0">
+                                <p class="fs--1 text-uppercase ls font-weight-bold mb-0">Made with<span
+                                        class="fas fa-heart mx-1"></span>by
+                                    <a class="text-light" href="https://themewagon.com/">Themewagon</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div class="col-lg-3 col-12 t-0 order-0 order-lg-1 position-absolute position-lg-relative">
+            <div class="h-lg-100vh sticky-top py-4"><span class="btn-close sticky-area"><img class="d-none d-lg-block times"
+                        src="assets/img/times.svg" width="25" alt="" /><img class="d-lg-none" src="assets/img/times-black.svg"
+                        width="18" alt="" /></span>
+                <div class="bg-holder d-flex d-sm-flex d-md-inline"
+                    style="background-image:url(assets/img/sidebars/faq.jpg);">
+                    <div class="menu-mobile d-flex d-lg-none ml-5">
+                        <div class="container-menu-mobile px-3" (click)="openMenuMovil($event)">
+                            <i class="fas fa-bars fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="page-title">{{title}}</h1>
+            </div>
+        </div>
+    </div>
+</div>

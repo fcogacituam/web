@@ -1368,7 +1368,7 @@ spUtils.$document.ready(function () {
     PAGE: '.page',
     CLOSEAREA: '.sticky-area',
     SIDEBARITEM: '.sidebar-item',
-    SIDEBAR_ITEM_WRAPPER: '.sidebar-item-wrapper',
+    SIDEBAR_ITEM_WRAPPER: '.menu-action-trigger', //
     BASECONTENT: '#baseContent',
     GRIDNAV: '#gridNav',
     PAGETITLE: '.page-title',
@@ -1454,18 +1454,18 @@ spUtils.$document.ready(function () {
 
   var goToPage = function goToPage(content) {
     var position = spUtils.$window.width() < breakPoint ? '-100%' : '-50%';
+
     baseContent.css({
       left: position
     });
     gridNav.css({
       right: position
     });
-
     if (content) {
       $(Selector.PAGE).fadeOut('1000');
       $("#" + content).fadeIn('1000');
       $(Selector.CLOSEBUTTON).fadeIn('slow');
-
+      $(".foot").addClass("hideFoot");
       switch (content) {
         case 'portfolio':
           $(Selector.SORTABLEMENU).find(Selector.ACTIVE).removeClass('active');
@@ -1508,7 +1508,11 @@ spUtils.$document.ready(function () {
 
   var home = function home() {
     isInHome = true;
-
+    //IN HOME
+    if ($(".foot").hasClass("hideFoot")) {
+      $(".foot").removeClass("hideFoot");
+    }
+    
     if (spUtils.$window.width() < breakPoint) {
       homePage.css('display', 'block');
       setTimeout(function () {
@@ -1584,8 +1588,7 @@ spUtils.$document.ready(function () {
   window.onhashchange = function () {
     var url = window.location.href;
     var hash = window.location.hash;
-    var pageId;
-
+    var pageId
     if (document.getElementById(hash.substr(1))) {
       pageId = $(hash).closest('.page').attr('id');
     }

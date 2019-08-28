@@ -1,3 +1,7 @@
 .header{
     z-index:103;
 }
+.bg-holder{
+    display: flex;
+    align-items: center;
+}

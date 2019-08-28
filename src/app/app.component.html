@@ -12,7 +12,7 @@
   <!-- ============================================-->
   <!-- End of Preloader ===========================-->
 
-
+  <!-- <app-menu-mobile *ngIf="showMenuMovil" [paginas]="paginas"></app-menu-mobile> -->
   <!-- ============================================-->
   <!-- <section> begin ============================-->
   <section class="p-0" id="home">
@@ -43,15 +43,14 @@
             </div>
             <!-- FIN HEADER -->
             <div class="dark"></div>
-            <div class="cover slide"></div>
             <div class="carousel-inner h-100">
               <div *ngFor="let item of carousel; let index=index" [class.active]="index==0" class="carousel-item h-100" >
                 <img class="d-block w-100 h-100 zoomImage" src="{{item.image}}" alt="{{item.alt}}">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-xs-block d-md-block">
                   <h1 class="animated zoomIn">{{item.title}}</h1>
                   <p class="animated bounce">{{item.subtitle}}</p>
 
-                  <a class="btn-slide animated zoomIn"  data-content="feature"> <span class="masked">Ver más</span> </a>
+                  <a class="btn-slide animated zoomIn" > Ver más </a>
                  
                 </div>
                 
@@ -60,9 +59,13 @@
               
 
             </div>
-          <footer class="p-5 w-100 ">
+          <!-- <footer class="p-5"> d-block d-sm-block d-lg-none-->
+          <div class="foot d-none d-lg-block">
+            <app-home instance="1"></app-home>
             <app-footer></app-footer>
-          </footer>
+          </div>
+          
+          <!-- </footer> -->
           </div>
            
           <!-- FIN SLIDER -->
@@ -74,75 +77,24 @@
 
       <div class="position-relative w-lg-50 position-lg-fixed undefined" id="gridNav">
         <div class="row h-lg-100vh">
-          <div class="col-6 col-sm-4 minh-25vh h-lg-50vh sidebar-item-wrapper py-5" data-content="about">
-            <div class="cover first"></div>
-            <div class="bg-holder" style="background-image:url(https://picsum.photos/200/300);">
-            </div>
-            <!--/.bg-holder-->
 
+
+          <div *ngFor="let pagina of paginas; let i = index" class="col-6 col-sm-4 main-pages minh-25vh h-lg-50vh sidebar-item-wrapper py-5 menu-action-trigger" [attr.data-content]="pagina.path">
+            <div class="cover" [ngClass]="'cover'+i"></div>
+            <div class="bg-holder" style="background-image:url(https://picsum.photos/200/300);"></div>
             <div class="sidebar-item">
               <img class="mb-1 mb-lg-3 nav-icon" src="assets/img/lineicons/favorites.svg" alt="">
-              <h2 class="font-weight-light text-white fs-1 fs-xl-2 fs-xxl-3">About Us</h2>
+              <h2 class="font-weight-light text-white fs-1 fs-xl-2 fs-xxl-3">{{pagina.title}}</h2>
             </div>
           </div>
-          <div class="col-6 col-sm-4 minh-25vh h-lg-50vh sidebar-item-wrapper py-5" data-content="service">
-            <div class="cover second"></div>
-            <div class="bg-holder" style="background-image:url(https://picsum.photos/200/305);">
-            </div>
-            <!--/.bg-holder-->
 
-            <div class="sidebar-item">
-              <img class="mb-1 mb-lg-3 nav-icon" src="assets/img/lineicons/suitcase.svg" alt="">
-              <h2 class="font-weight-light text-white fs-1 fs-xl-2 fs-xxl-3">Services</h2>
-            </div>
-          </div>
-          <div class="col-6 col-sm-4 minh-25vh h-lg-50vh sidebar-item-wrapper py-5" data-content="portfolio">
-            <div class="cover third"></div>
-            <div class="bg-holder" style="background-image:url(https://picsum.photos/200/304);">
-            </div>
-            <!--/.bg-holder-->
 
-            <div class="sidebar-item">
-              <img class="mb-1 mb-lg-3 nav-icon" src="assets/img/lineicons/heart.svg" alt="">
-              <h2 class="font-weight-light text-white fs-1 fs-xl-2 fs-xxl-3">Portfolio</h2>
-            </div>
-          </div>
-          <div class="col-6 col-sm-4 minh-25vh h-lg-50vh sidebar-item-wrapper py-5" data-content="gallery">
-            <div class="cover fourth"></div>
-            <div class="bg-holder" style="background-image:url(https://picsum.photos/200/303);">
-            </div>
-            <!--/.bg-holder-->
-
-            <div class="sidebar-item">
-              <img class="mb-1 mb-lg-3 nav-icon" src="assets/img/lineicons/image.svg" alt="">
-              <h2 class="font-weight-light text-white fs-1 fs-xl-2 fs-xxl-3">Gallery</h2>
-            </div>
-          </div>
-          <div class="col-6 col-sm-4 minh-25vh h-lg-50vh sidebar-item-wrapper py-5" data-content="faq">
-            <div class="cover fifth"></div>
-            <div class="bg-holder" style="background-image:url(https://picsum.photos/200/302);">
-            </div>
-            <!--/.bg-holder-->
-
-            <div class="sidebar-item">
-              <img class="mb-1 mb-lg-3 nav-icon" src="assets/img/lineicons/computer.svg" alt="">
-              <h2 class="font-weight-light text-white fs-1 fs-xl-2 fs-xxl-3">Faq</h2>
-            </div>
-          </div>
-          <div class="col-6 col-sm-4 minh-25vh h-lg-50vh sidebar-item-wrapper py-5" data-content="contact">
-            <div class="cover sixth"></div>
-            <div class="bg-holder" style="background-image:url(https://picsum.photos/200/301);">
-            </div>
-            <!--/.bg-holder-->
-
-            <div class="sidebar-item">
-              <img class="mb-1 mb-lg-3 nav-icon" src="assets/img/lineicons/placeholder.svg" alt="">
-              <h2 class="font-weight-light text-white fs-1 fs-xl-2 fs-xxl-3">Contact</h2>
-            </div>
-          </div>
-        </div>
+        </div> 
       </div>
-
+      <div class="foot2 d-block d-sm-block d-lg-none">
+        <app-home instance="2"></app-home>
+        <app-footer></app-footer>
+      </div>
     </div>
     <!-- end of .container-->
   </section>
@@ -151,6 +103,23 @@
 
 
 
+
+
+
+
+      <app-universidad [paginas]="paginas"></app-universidad>
+      <app-investigacion [carreras]="carreras" [paginas]="paginas"></app-investigacion>
+      <app-comunidad-uoh [paginas]="paginas"></app-comunidad-uoh>
+      <app-admision [paginas]="paginas"></app-admision>
+      <app-vinculacion [paginas]="paginas"></app-vinculacion>
+      <app-noticias-y-eventos [paginas]="paginas"></app-noticias-y-eventos>
+
+
+
+
+      
+     
+      
 
 
 

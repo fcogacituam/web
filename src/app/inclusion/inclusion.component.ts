@@ -16,12 +16,19 @@ export class InclusionComponent  {
   isTextOpen: boolean = false;
   isColorOpen: boolean = false;
   isLangOpen: boolean = false;
+
+  toUp:boolean;
+
   constructor(){
     console.log("inclusion component");
   }
 
   ngOnInit(){
-    console.log(this.display);
+    if (this.display==='up') {
+      this.toUp = true;
+    }else{
+      this.toUp = false;
+    }
   }
 
   public toggle(event:Event){

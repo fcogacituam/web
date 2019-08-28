@@ -1,0 +1,150 @@
+<div class="container">
+    <div class="row justify-content-center p-5" >
+        <div class="col-lg-7 text-center">
+            <h2 class="section-title animated animar fade up">¿Por qué elegirnos?</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5 ml-auto align-self-start">
+            <div class="p-4 rounded bg-white why-choose-us-box animated animar fade left">
+                <div class="d-flex align-items-center mb-3">
+                    <span class="fa-stack stacked">
+                        <i class="fas fa-circle fa-stack-2x circulo"></i>
+                        <i class="fas fa-flag fa-stack-1x fa-inverse icono"></i>
+                    </span>
+                    <span class="pl-2">20000 Yearly Graduates</span>
+                </div>
+
+                <div class="d-flex align-items-center mb-3">
+                    <span class="fa-stack stacked">
+                        <i class="fas fa-circle fa-stack-2x circulo"></i>
+                        <i class="fas fa-flag fa-stack-1x fa-inverse icono"></i>
+                    </span>
+                    <span class="pl-2">150 Universities Worldwide</span>
+                </div>
+
+                <div class="d-flex align-items-center mb-3">
+                    <span class="fa-stack stacked">
+                        <i class="fas fa-circle fa-stack-2x circulo"></i>
+                        <i class="fas fa-flag fa-stack-1x fa-inverse icono"></i>
+                    </span>
+                    <span class="pl-2">Top Professionals in The World</span>
+                </div>
+
+                <div class="d-flex align-items-center mb-3">
+                    <span class="fa-stack stacked">
+                        <i class="fas fa-circle fa-stack-2x circulo"></i>
+                        <i class="fas fa-flag fa-stack-1x fa-inverse icono"></i>
+                    </span>
+                    <span class="pl-2">Expand your knowledge</span>
+                </div>
+
+          
+                <div class="d-flex align-items-center mb-3">
+                    <div class="col p-0 m-0">
+                        <span class="fa-stack stacked">
+                            <i class="fas fa-circle fa-stack-2x circulo"></i>
+                            <i class="fas fa-flag fa-stack-1x fa-inverse icono"></i>
+                        </span>
+                    </div>
+                    <div class="col-11 p-0 m-0">
+                        <span class="pl-2">Best online teaching asisstant courses</span>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center mb-3">
+                    <div class="col p-0 m-0">
+                        <span class="fa-stack stacked">
+                            <i class="fas fa-circle fa-stack-2x circulo"></i>
+                            <i class="fas fa-flag fa-stack-1x fa-inverse icono"></i>
+                        </span>
+                    </div>
+                    <div class="col-11 p-0 m-0">
+                        <span class="pl-2">Best teachers</span>
+                    </div>
+                </div>
+               
+                
+            </div>
+        </div>
+        <div class="col-lg-6 align-self-end" data-aos="fade-left" data-aos-delay="200">
+            <img src="assets/img/person_transparent.png" alt="Image" class="img-fluid animated animar fade right">
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid destacados p-5">
+    <div class="row justify-content-center py-4">
+        <h2 class="animated animar fade up">Destacados</h2>
+    </div>
+    <div class="d-flex align-items-center animated animar fade up slider-destacados ">
+        <div *ngFor="let item of destacados; let i = index">
+            <a href=""><img class="px-3" src="{{item.image}}" alt="{{item.alt}}"></a>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+<div class="container-fluid home-tabs px-2 px-lg-6">
+    <div class="row d-flex py-6 justify-content-center">
+        <!-- <div class="section light-bg"> -->
+            <div class="container">
+                <div class="section-title text-center pb-6">
+                    <!-- <small>FEATURES</small> -->
+                    <h2 class="animated animar fade up">Otra sección</h2>
+                </div>
+                <div class="animated animar bounce up">
+                    <ul class="nav nav-tabs nav-justified " role="tablist">
+                        <li *ngFor="let panel of paneles; let first = first" class="nav-item">
+                            <a href="" class="nav-link" [ngClass]="{active: first}" data-toggle="tab"
+                                href="#{{panel.id+instance}}">{{panel.label}}</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content p-4  p-lg-3">
+                        <div *ngFor="let panel of paneles;let first=first;let even = even;let odd = odd"
+                            [ngClass]="{active:first, show:first}" class="tab-pane fade" id="{{panel.id+instance}}">
+                            <div class="d-flex flex-column flex-md-row">
+                                <ng-container *ngIf="even">
+                                    <div class="col-md-3 col-12">
+                                        <img *ngIf="panel.image" src="{{panel.image}}" alt="{{panel.alt}}" class="w-100 rounded align-self-center ">
+                                    </div>
+                                    <div class="col-md-9 col-12">
+                                        <h2>{{panel.title}}</h2>
+                                        <p [innerHtml]="panel.text"></p>
+                                    </div>
+                                </ng-container>
+                                <ng-container *ngIf="odd">
+                                   
+                                    <div class="col-md-9 col-12">
+                                        <h2>{{panel.title}}</h2>
+                                        <p [innerHtml]="panel.text"></p>
+                                    </div>
+                                    <div class="col-md-3 col-12">
+                                        <img *ngIf="panel.image" src="{{panel.image}}" alt="{{panel.alt}}" class="w-100 rounded align-self-center ">
+                                    </div>
+                                </ng-container>
+                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        <!-- </div> -->
+    
+    </div>
+</div>
+
+
+
+
+
+
+
+
+       
+

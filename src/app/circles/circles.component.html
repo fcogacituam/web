@@ -1,0 +1,45 @@
+<!-- 
+
+<ul>
+    <li class="circle-menu center">Center</li>
+    <li class="circle-menu">1</li>
+    <li class="circle-menu">1</li>
+    <li class="circle-menu">1</li>
+    <li class="circle-menu">1</li>
+    <li class="circle-menu">1</li>
+    <li class="circle-menu">1</li>
+    <li class="circle-menu">1</li>
+    <li class="circle-menu">1</li>
+    <li class="circle-menu">1</li>
+    <li class="circle-menu">1</li>
+    <li class="circle-menu">1</li>
+</ul> -->
+<div class="container-circulos" [ngStyle]="{'height': props.height+'px'}">
+    <div class="circulo-exterior" [ngStyle]="{'background':props.bg}">
+       
+        <div class="shape">
+            <div class="circulo-central" [ngClass]="{'center': !isStarted}" [ngStyle]="{'width': diam+'px', 'height': diam+'px'}">
+                <h5 *ngIf="!isStarted; else contenido" (click)="start()">Conoce las Carreras</h5>
+                <ng-template #contenido>
+                    <h5>{{activeData.title}}</h5>
+                    <p class="p-0 m-0">{{desc}}</p>
+                    <a class="btn-slide" href="{activeData.href}">Ver más</a>
+                </ng-template>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    <div class="circulo-girador"
+        [ngStyle]="{'transform': 'rotate(' + moveCircle.rotate + 'deg) translate('+ moveCircle.space +'px) rotate('+moveCircle.rotateReverse+'deg)'}">
+    </div>
+    <div *ngFor="let carrera of datos;let index=index" class="circulo-item-container d-flex flex-column align-items-center"  [ngStyle]="{'transform': 'rotate(' + carrera.rotate + 'deg) translate('+ carrera.space +'px) rotate('+carrera.rotateReverse+'deg)'}" (click)="setActive(index)"> 
+        <div class="circulo-item" [ngClass]="{'active': carrera.active}">
+            <i class="fas fa-university fa-2x"></i>
+        </div>
+        <div class="circulo-title text-center">
+            {{carrera.title}}
+        </div>
+    </div>
+</div>

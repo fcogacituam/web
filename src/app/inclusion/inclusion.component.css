@@ -145,6 +145,10 @@ rgb(35,28,52);      AZUL OSCURO
     height: 40px;
     width:90%;
 }
+.hide.search.toUp{
+     box-shadow: 0px 0px 15px 0px #000;
+     width:30%;
+}
 .hide.search input{
     width: 70%;
     background: transparent;
@@ -155,6 +159,7 @@ rgb(35,28,52);      AZUL OSCURO
 }
 .circle.search{
     margin-left:-30px!important;
+    
 }
 .hide.search button{
         border: none;
@@ -213,3 +218,4 @@ rgb(35,28,52);      AZUL OSCURO
 .circle.red{
     background:rgb(198,9,59); 
 }
+.list .list-line .hide .circle{background: #fff;color: #000;}
