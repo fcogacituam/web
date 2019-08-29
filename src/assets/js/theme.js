@@ -1454,7 +1454,7 @@ spUtils.$document.ready(function () {
 
   var goToPage = function goToPage(content) {
     var position = spUtils.$window.width() < breakPoint ? '-100%' : '-50%';
-
+    console.log("PAGES",pages)
     baseContent.css({
       left: position
     });
@@ -1512,7 +1512,7 @@ spUtils.$document.ready(function () {
     if ($(".foot").hasClass("hideFoot")) {
       $(".foot").removeClass("hideFoot");
     }
-    
+
     if (spUtils.$window.width() < breakPoint) {
       homePage.css('display', 'block');
       setTimeout(function () {
@@ -1565,12 +1565,20 @@ spUtils.$document.ready(function () {
   spUtils.$document.on(clickEvent, Selector.SIDEBAR_ITEM_WRAPPER, function (e) {
     var $this = $(e.target);
     var content = '';
+    $(".default-page").removeAttr('id');
 
     if ($this.closest(Selector.SIDEBAR_ITEM_WRAPPER).data(DataKey.CONTENT)) {
       content = $this.closest(Selector.SIDEBAR_ITEM_WRAPPER).data(DataKey.CONTENT);
+      console.log("content",content)
+      if(! $("#"+content).length){
+        console.log("no existe un template para esta sección");
+        $(".default-page").attr('id',content);
+      }
+
+        window.location.hash = content;
+      
     }
 
-    window.location.hash = content;
   }); //
   // ─── CLICK EVENT FOR CLOSE AREA ─────────────────────────────────────────────────
   //
@@ -1586,6 +1594,17 @@ spUtils.$document.ready(function () {
   //
 
   window.onhashchange = function () {
+    $(Selector.SIDEBAR_ITEM_WRAPPER).each(function (item, value) {
+      var $this = $(value);
+      var found = jQuery.inArray($this.data(DataKey.CONTENT),pages);
+      if (found >=0) {
+        
+      }else{
+        pages.push($this.data(DataKey.CONTENT));
+
+      }
+    });
+    console.log("PAGINAS",pages);
     var url = window.location.href;
     var hash = window.location.hash;
     var pageId

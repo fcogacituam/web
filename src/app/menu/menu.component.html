@@ -1,7 +1,7 @@
 
 <div class="main-menu d-lg-flex d-none">
     <nav class="row d-flex justify-content-around container-menu align-items-stretch flex-nowrap">
-        <div class=" p-2 ml-6">
+        <div class="align-self-center p-2 ml-6">
             <a class="sticky-area"><img src="assets/img/examples/LOGO_CABECERA.png" alt=""></a>
         </div>
         
@@ -14,11 +14,12 @@
                 </a>
                 <div *ngIf="pag.children" class="container-submenu p-5">
                     <div class="container">
-                        <div class="row flex-column flex-wrap menu-wrap">
-                            <div class=" px-2 m-0 mb-5" *ngFor="let subp of pag.children">
-                                <a class="menu-action-trigger" [attr.data-content]="subp.path"><b>{{subp.title}}</b></a>
-                                <div class="col px-0 py-1 m-0" *ngFor="let subp2 of subp.children">
-                                    <a class="menu-action-trigger" [attr.data-content]="subp2.path">{{subp2.title}}</a>
+                        <div class="row flex-row flex-wrap menu-wrap">
+                            <div class="col-3 px-2 m-0 mb-5" *ngFor="let subp of pag.children">
+                                <h5 class="menu-action-trigger d-inline-block" [attr.data-content]="subp.path">{{subp.title}}</h5>
+                                <div class="col px-3 py-1 m-0" *ngFor="let subp2 of subp.children">
+                                    <a class="menu-action-trigger d-inline-block" [attr.data-content]="subp2.path">{{subp2.title}}</a>
+                                    <!-- <a >{{subp2.title}}</a> -->
                                     <!-- <div class="col" *ngFor="let subp3 of subp2.children">
                                                     {{subp3.title}}
                                                 </div> -->

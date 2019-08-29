@@ -81,16 +81,6 @@ export class AppComponent implements OnInit{
       href: '#carrera3',
       description: 'Integer sed sollicitudin ligula. Curabitur molestie dui venenatis odio mattis temporLorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam finibus semper neque quis auctor. Morbi mattis ut ipsum in congue. Nulla posuere nibh eget felis pretium placerat. Integer sed sollicitudin ligula. Curabitur molestie dui venenatis odio mattis tempor.',
     },
-    {
-      title: 'Carrera 4',
-      href: '#carrera4',
-      description:'iquam finibus semper neque quis auctor. Morbi mattis ut ipsum in congue. Nulla posuere nibh eget felis pretium placerat. Integer sed sollicitudin ligula. Curabitur molestie dui venenatis odio mattis tempor.',
-    },
-    {
-      title: 'Carrera 5',
-      href: '#carrera5',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam finibus semper neque quis auctor. Morbi mattis ut ipsum in congue. Nulla posuere nibh eget felis pretium placerat. Integer sed sollicitudin ligula. Curabitur molestie dui venenatis odio mattis tempor.',
-    },
 
   ];
   paginas : any = [
@@ -186,6 +176,26 @@ export class AppComponent implements OnInit{
               "id": 2,
               "section_type_id": 4,
               "title": "Consejo Académico",
+              "description": null,
+              "position": 1,
+              "parent": 1,
+              "path": "consejo-academico",
+              "status": 1,
+            },
+            {
+              "id": 2,
+              "section_type_id": 4,
+              "title": "Item de prueba 1 ",
+              "description": null,
+              "position": 1,
+              "parent": 1,
+              "path": "consejo-academico",
+              "status": 1,
+            },
+            {
+              "id": 2,
+              "section_type_id": 4,
+              "title": "Item de prueba 2",
               "description": null,
               "position": 1,
               "parent": 1,
@@ -457,7 +467,6 @@ export class AppComponent implements OnInit{
     // })
     let self=this;
     $(".container-fullpage-menu .close").on('click',function(){
-      console.log("cerraaaaaaaaar");
       self.showMenuMovil =false;
     })
   }

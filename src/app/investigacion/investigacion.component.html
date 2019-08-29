@@ -9,30 +9,35 @@
             </div>
             <!-- ============================================-->
             <!-- <section> begin ============================-->
-            <section class="pt-5 pt-xl-7 pt-xxl-8">
-                <app-circles [data]="carreras" [diametro]="300" [tipo]="1" [distancia]="100"></app-circles>
+            <section class="pt-7 pt-xl-7 pt-xxl-8">
+            <div class="container-fluid">
+                <div class="row justify-content-center pb-5">
+                    <div class="col-lg-10">
+                        <div class="text-center mb-5 mb-lg-6">
+                            <h2 class="fs-2 fs-sm-3"> <span class="font-weight-medium">Conoce Nuestras </span>
+                                Carreras</h2>
+                            <hr class="hr-ornate" />
+                        </div>
+                            <app-circles [data]="carreras" [diametro]="300" [tipo]="1" [distancia]="100" hash="investigacion"></app-circles>
+                    </div>
+                </div>
+            </div>
 
             </section>
             <footer class="page-footer">
-                <div class="bg-holder"
-                    style="background-image:url(assets/img/sidebars/service.jpg);background-position: 0 41%; transform: scale(1.1);">
-                </div>
-                <!--/.bg-holder-->
-
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6 text-lg-left">
-                                <p class="fs--1 text-uppercase ls font-weight-bold mb-0">
-                                    Copyright &copy; 2018 Boots4&trade; inc.</p>
-                            </div>
-                            <div class="col-lg-6 text-lg-right mt-2 mt-lg-0">
-                                <p class="fs--1 text-uppercase ls font-weight-bold mb-0">Made with<span
-                                        class="fas fa-heart mx-1"></span>by
-                                    <a class="text-light" href="https://themewagon.com/">Themewagon</a>
-                                </p>
-                            </div>
+                <div class="container-fluid copyright">
+                    <div class="row p-3">
+            
+                        <div class="derechos col-12 col-md-6 order-2 order-md-1 text-center text-md-left p-1 p-md-0">
+                            Copyright 2018 Universidad de O'Higgins | Todos los derechos reservados.
                         </div>
+                        <div class="redes col-12 col-md-6 order-1 order-md-2 text-center text-md-right p-1 p-md-0">
+                            <a href=""><i class="fab fa-facebook-square fa-2x"></i></a>
+                            <a href=""><i class="fab fa-twitter-square fa-2x"></i></a>
+                            <a href=""><i class="fab fa-instagram fa-2x"></i></a>
+                            <a href=""><i class="fab fa-youtube fa-2x"></i></a>
+                        </div>
+            
                     </div>
                 </div>
             </footer>
@@ -42,10 +47,13 @@
                         class="d-none d-lg-block times" src="assets/img/times.svg" width="25" alt="" /><img
                         class="d-lg-none" src="assets/img/times-black.svg" width="18" alt="" /></span>
 
-                <div class="bg-holder d-flex d-sm-flex d-md-inline"
-                    style="background-image:url(assets/img/sidebars/service.jpg);">
+            <div class="bg-holder d-flex d-sm-flex d-md-inline" style="background-image:url(https://picsum.photos/400/1000);">
+                <div class="bg-color"></div>
                     <div  class="menu-mobile d-flex d-lg-none ml-5">
-                        <div class="container-menu-mobile px-3" (click)="openMenuMovil($event)">
+                        <div class="col-6">
+                            <img src="assets/img/examples/LOGO_CABECERA.png" class="sticky-area img-fluid mh-100 h-auto w-100 py-1" alt="Logo header">
+                        </div>
+                        <div class="col container-menu-mobile px-3" (click)="openMenuMovil($event)">
                             <i class="fas fa-bars fa-2x"></i>
                         </div>
                     </div>

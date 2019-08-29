@@ -19,6 +19,7 @@ import { AdmisionComponent } from './admision/admision.component';
 import { ComunidadUohComponent } from './comunidad-uoh/comunidad-uoh.component';
 import { VinculacionComponent } from './vinculacion/vinculacion.component';
 import { NoticiasYEventosComponent } from './noticias-y-eventos/noticias-y-eventos.component';
+import { DefaultComponent } from './default/default.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { NoticiasYEventosComponent } from './noticias-y-eventos/noticias-y-event
     ComunidadUohComponent,
     VinculacionComponent,
     NoticiasYEventosComponent,
+    DefaultComponent,
   ],
   imports: [
     BrowserModule,

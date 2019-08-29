@@ -10,6 +10,7 @@ export class CirclesComponent implements OnInit {
   @Input('tipo') type: number;
   @Input('diametro') diam: number;
   @Input('distancia') dist: number;
+  @Input('hash') hash:string;
   // @Input('options') opt: Array<any>;
   activeData:any;
   moveCircle: any={"rotate":'',"space":'',"rotateReverse":''};
@@ -74,14 +75,30 @@ export class CirclesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    let self=this;
     let n_datos = this.datos.length;
+    var newHash = window.location.hash.substring(1);
     if (n_datos <= 6) {
       this.props.height = this.diam + (this.dist) +100;      
     }else{
       this.props.height = this.diam + (this.dist *2) + 150;   
     }
+    if (newHash == self.hash) {
+      setTimeout(function () {
+        self.start();
+      }, 3000)
+    }
+    $(window).on('hashchange', function () {
+     
+      let newHash = window.location.hash.substring(1);
+      if(newHash == self.hash){
+        setTimeout(function () {
+          self.start();
+        }, 2000)
+      }
+      
+    });
     
-   
   }
 
 }

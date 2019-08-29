@@ -84,44 +84,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    let n_videos = this.destacados.length;
-    var translated = 0;
-    let currPos = 2;
-    const show_slides = 2;
-
-    setInterval(function(){
-      
-    },5000)
-
-    if (currPos === 0) {
-      $('.controls .prev i').css("color", "#ccc");
-    }
-    $('body').on('click', '.prev', function () {
-      event.preventDefault();
-      if (currPos > show_slides ) {
-        translated = translated + 100;
-        $('.container-video').css({
-          '-webkit-transform': 'translateX(' + translated + '%) '
-        });
-        currPos -= 1;
-      }
-      console.log(currPos)
-
-    });
-
-    $('body').on('click', '.next', function () {
-      event.preventDefault();
-      if (currPos < n_videos ) {
-        translated = translated - (100);
-        $('.container-video').css({
-          '-webkit-transform': 'translateX(' + translated + '%) '
-        });
-        currPos += 1;
-      }
-      console.log(currPos)
-
-    });
-
+   
 
    
 

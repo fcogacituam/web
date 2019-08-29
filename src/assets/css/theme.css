@@ -13844,9 +13844,9 @@ a.text-dark:hover, a.text-dark:focus {
     left: 2rem;
     bottom: 4rem;
     margin: 0;
-    -webkit-writing-mode: vertical-lr;
-    -ms-writing-mode: tb-lr;
-    writing-mode: vertical-lr;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
     display: block;
     text-align: right;
     position: absolute;
@@ -13855,7 +13855,7 @@ a.text-dark:hover, a.text-dark:focus {
     font-size: 3.157rem;
     margin: 0 1rem;
     z-index: 1050;
-  }
+}
   .page-content {
     padding-bottom: 5.72rem;
   }
