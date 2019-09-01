@@ -1454,7 +1454,6 @@ spUtils.$document.ready(function () {
 
   var goToPage = function goToPage(content) {
     var position = spUtils.$window.width() < breakPoint ? '-100%' : '-50%';
-    console.log("PAGES",pages)
     baseContent.css({
       left: position
     });
@@ -1467,7 +1466,7 @@ spUtils.$document.ready(function () {
       $(Selector.CLOSEBUTTON).fadeIn('slow');
       $(".foot").addClass("hideFoot");
       switch (content) {
-        case 'portfolio':
+        case 'admision':
           $(Selector.SORTABLEMENU).find(Selector.ACTIVE).removeClass('active');
           $(Selector.SORTABLEMENU).find(Selector.ITEM).first().addClass('active');
           setTimeout(function () {
@@ -1488,7 +1487,7 @@ spUtils.$document.ready(function () {
         default:
           break;
       }
-
+      
       setTimeout(function () {
         if (spUtils.$window.width() < breakPoint) {
           homePage.css('display', 'none');
@@ -1508,11 +1507,15 @@ spUtils.$document.ready(function () {
 
   var home = function home() {
     isInHome = true;
+    
     //IN HOME
     if ($(".foot").hasClass("hideFoot")) {
       $(".foot").removeClass("hideFoot");
     }
 
+    setTimeout(function(){
+      $('.slider-destacados').slick('refresh');
+    },500);
     if (spUtils.$window.width() < breakPoint) {
       homePage.css('display', 'block');
       setTimeout(function () {
@@ -1594,6 +1597,7 @@ spUtils.$document.ready(function () {
   //
 
   window.onhashchange = function () {
+    
     $(Selector.SIDEBAR_ITEM_WRAPPER).each(function (item, value) {
       var $this = $(value);
       var found = jQuery.inArray($this.data(DataKey.CONTENT),pages);
@@ -1604,6 +1608,9 @@ spUtils.$document.ready(function () {
 
       }
     });
+
+      
+
     console.log("PAGINAS",pages);
     var url = window.location.href;
     var hash = window.location.hash;
@@ -1624,6 +1631,7 @@ spUtils.$document.ready(function () {
         }, 100);
       }
     } else if (url.lastIndexOf('#') < 0 && window.location.hash === '') {
+      
       home();
     }
   }; //
@@ -1642,6 +1650,7 @@ spUtils.$document.ready(function () {
       });
     } else {
       homePage.css('display', 'block');
+     
     }
   });
 });

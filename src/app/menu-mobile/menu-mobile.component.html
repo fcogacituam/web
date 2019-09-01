@@ -1,23 +1,35 @@
 
-<div class="container-fullpage-menu d-lg-none animated fadeIn">
-    <div class="closeMovile p-3 text-right">
-        <a (click)="onCloseMenuMovile($event)"><i class="fas fa-times fa-2x" ></i></a>
-    </div>
-    <div class="menu-fullpage">
-        <div  *ngFor="let pag of paginas.children" class="d-flex flex-column align-items-center w-100 my-2">
-  
-            <h4 class="w-100 text-center p-2">{{pag.title | uppercase}}</h4>
-            <!-- <ul *ngIf="pag.children" class="m-0 p-0 text-center">
-                <li *ngFor="let subp of pag.children">
-                    <h3>{{subp.title}}</h3>
-                    <ul *ngIf="subp.children">
-                        <li *ngFor="let subp2 of subp.children">
-                            <h4>{{subp2.title}}</h4>
-                        </li>
-                    </ul>
-                </li>
-            </ul> -->
-        </div>
-        
+<div class="container-fullpage-menu d-lg-none animated slideInDown position-absolute w-100">
+    <div class="menu-fullpage" *ngIf="paginas.children">
+        <div  *ngFor="let pag of paginas.children" >
+            <div class="d-flex justify-content-between align-items-center item">
+                <h5 class="menu-action-trigger m-0 px-4 py-2" [attr.data-content]="pag.path">{{pag.title | uppercase}}</h5>
+                <div *ngIf="pag.children" class="px-4 py-2 expand"><i class="fas fa-plus"></i></div>
+            </div>
+            <div *ngIf="pag.children" class="w-100 child d-none">
+                <div *ngFor="let subp of pag.children">
+                    <div class="d-flex justify-content-between align-items-center child-item">
+                        <h6 class="menu-action-trigger px-5 m-0 py-2" [attr.data-content]="subp.path">{{subp.title}}</h6>
+                        <div *ngIf="subp.children" class="px-3 py-2 expand2" ><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div *ngIf="subp.children" class="w-100 firstChild d-none" >
+                        <div *ngFor="let subp2 of subp.children">
+                            <div class="d-flex justify-content-between align-items-center child-item">
+                                <h6 class="menu-action-trigger px-6 m-0 py-2" [attr.data-content]="subp2.path">{{subp2.title}}</h6>
+                                <div *ngIf="subp2.children" class="px-2 py-2 expand3"><i class="fas fa-plus"></i></div>
+                            </div>
+                            <div *ngIf="subp2.children" class="w-100 secondChild d-none">
+                                <div *ngFor="let subp3 of subp2.children">
+                                    <div class="d-flex justify-content-between align-items-center child-item">
+                                        <h6 class="menu-action-trigger px-7 m-0 py-2" [attr.data-content]="subp3.path">{{subp3.title}}</h6>
+                                        <div *ngIf="subp3.children" class="px-3 py-2 expand4"><i class="fas fa-plus"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
     </div>
 </div>

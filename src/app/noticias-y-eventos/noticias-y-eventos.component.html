@@ -3,8 +3,7 @@
         <div class="col-lg-9 order-1 order-lg-0 page-content pt-lg-0">
 
             <app-menu [paginas]="paginas" (current)="setCurrent($event)" ></app-menu>
-            <app-menu-mobile *ngIf="showMenuMovil" [paginas]="current" (closeMenu)="cerrarMenu($event)"></app-menu-mobile>
-            <div class="accesibilidad col-lg-9">
+            <div class="accesibilidad">
                 <app-inclusion display="up"></app-inclusion>
             </div>
             <!-- ============================================-->
@@ -14,7 +13,7 @@
                 <div class="container-fluid">
                     <div class="row justify-content-center pb-5">
                         <div class="col-lg-10">
-                            <div class="text-center mb-5 mb-lg-6">
+                            <div class="text-center pt-6 pt-md-4 pt-lg-0 mb-5 mb-lg-6">
                                 <h2 class="fs-2 fs-sm-3"> <span class="font-weight-medium">Frequently Asked </span>
                                     Questions</h2>
                                 <hr class="hr-ornate" />
@@ -102,7 +101,492 @@
             </section>
             <!-- <section> close ============================-->
             <!-- ============================================-->
+<section class="pt-5 pt-xl-7 pt-xxl-8">
 
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="text-center">
+                                <h2 class="fs-2 fs-sm-3"> <span class="font-weight-medium">
+                                        Getteing Started</span></h2>
+                                <hr class="hr-ornate" />
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <ul class="pt-5 pt-lg-6 list-unstyled sticky-top" id="docs-nav">
+                                        <li>
+                                            <a href="#quick-start">Quick Start</a>
+                                        </li>
+                                        <li>
+                                            <a href="#setting-up-build-system">Setting Up Build System</a>
+                                        </li>
+                                        <li>
+                                            <a href="#file-structure">File Structure</a>
+                                        </li>
+                                        <li>
+                                            <a href="#gulp">Gulp</a>
+                                        </li>
+                                        <li>
+                                            <a href="#adding-new-page">Add a New Page</a>
+                                        </li>
+                                        <li>
+                                            <a href="#adding-new-plugin">Add a New Plugin</a>
+                                        </li>
+                                        <li>
+                                            <a href="#php-ajax-form">PHP-AJAX Form</a>
+                                        </li>
+                                        <li>
+                                            <a href="#theme-plugins">Built In Plugins</a>
+                                        </li>
+                                        <li>
+                                            <a href="#google-map">Google Map</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-9">
+                                    <h3 class="pt-5 pt-lg-6" id="quick-start">Quick Start
+                                        <a href="#quick-start">#</a>
+                                    </h3>
+                                    <p>Looking to start your project quickly? Just unzip the
+                                        <code>boot4-v3.0.0.zip</code>. We have precompiled and packaged everything in
+                                        the <code>pages</code> directory for you. Start editing the
+                                        <code>pages/nav-four-item-two-column.html </code> with a text or code editor,
+                                        save it, and open the file in your favourite browser to see the changes.</p>
+                                    <h3 class="pt-5 pt-lg-6" id="setting-up-build-system">Setting up Build system
+                                        <a href="#setting-up-build-system">#</a>
+                                    </h3>
+                                    <p>Unzip the <code>boots4-v3.0.0.zip</code> to any folder and open a command line or
+                                        terminal at that location. Boots4's dev tools require
+                                        <a href="https://nodejs.org/en/" target="_blank">Node</a> and
+                                        <a href="https://git-scm.com/" target="_blank">Git</a> . If you do not have them
+                                        in your machine, please install their latest stable version from their
+                                        corresponding website. As you have <span
+                                            class="font-weight-black text-black">Node and Git installed and accessible
+                                            from your terminal or command line</span>,
+                                        install
+                                        <a href="https://gulpjs.com/" target="_blank">Gulp CLI</a> package globally with
+                                        the following command:</p>
+                                    <p class="mt-4">When you’re done, install the rest of the boots4's dependencies
+                                        with:</p>
+                                    <p class="mt-4">Now run:</p>
+                                    <p class="mt-4">Running gulp will compile the SCSS, transpile the javascript, copy
+                                        all required libraries form <code>node_modules</code> to the corresponding
+                                        <code>pages/assets/ </code> directory and will open a browser window to
+                                        <code>pages/index.html</code></p>
+                                    <p>All of the following folders are monitored for changes, which will tell the
+                                        browser to reload automatically after any changes are made:</p>
+                         
+                                    <p class="mt-4">Now you can edit any html file from <code>pages</code>, change SCSS
+                                        variable with <code>_user-variables.scss</code>, or write your own SCSS code in
+                                        <code>scss/_user.scss</code></p>
+                                    <div class="alert alert-warning">Running the <code>gulp</code> command will discard
+                                        and regenerate all the files in following directories:</div>
+                
+                                    <p class="mt-4">Hit <code>Ctrl+C</code> or just close the command line window to
+                                        stop the server.</p>
+                                    <h3 class="pt-5 pt-lg-6" id="file-structure">File Structure
+                                        <a href="#file-structure">#</a>
+                                    </h3>
+                                    <p class="mt-3">Within your Boots4 you’ll find the following directories and files,
+                                        grouping common resources and providing both compiled, transpiled and minified
+                                        distribution files, as well as raw source files.</p>
+                      
+                                    <h3 class="pt-5 pt-lg-6" id="gulp">Gulp
+                                        <a href="#gulp">#</a>
+                                    </h3>
+                                    <h5 class="mt-3">To start your project run: </h5><code
+                                        class="fs-2 border rounded py-2 px-3 d-block border-300 bg-light">gulp</code>
+                                    <p class="mt-4">The <code>gulp</code> command will build, serve and watch the
+                                        project with the following gulp tasks:</p>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-light text-center text-sans-serif">
+                                                <tr>
+                                                    <th class="text-nowrap">Task</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-nowrap"><code>clean</code></td>
+                                                    <td>Delete the following directories:
+                                             
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap"><code>scss</code></td>
+                                                    <td>Compiles <code>scss/theme.scss</code> and generates
+                                                        <code>theme.css</code> and <code>theme.map</code> to the
+                                                        <code>pages/assets/css/ </code> directory.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap"><code>js:bootstrap</code></td>
+                                                    <td>Concat the <code>js</code> files from <code>js/bootstrap/</code>
+                                                        and transpiles with babel to <code>bootstrap.js</code>,
+                                                        <code>bootstrap.min.js</code> to the
+                                                        <code>pages/assets/js/</code> directory.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap"><code>js:boots4</code></td>
+                                                    <td>Concat the <code>js</code> files from <code>js/boots4/</code>
+                                                        and transpiles with babel to <code>theme.js</code>,
+                                                        <code>theme.min.js</code> to the <code>pages/assets/js/</code>
+                                                        directory.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap"><code>js:plugins</code></td>
+                                                    <td>Concat the <code>js</code> files according to the
+                                                        <code>Paths.JS.PLUGINS</code> array declared in
+                                                        <code>gulpfile.js</code> and transpiles with babel to
+                                                        <code>plugins.js</code> and <code>plugins.min.js</code> to the
+                                                        <code>pages/assets/js/</code> directory.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap"><code>js</code></td>
+                                                    <td>Run the following tasks parallelly:
+                                                        <ul>
+                                                            <li><code>js:bootstrap</code></li>
+                                                            <li><code>js:boots4</code></li>
+                                                            <li><code>js:plugins</code></li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap"><code>copy:dependency</code></td>
+                                                    <td>Copies the dependencies from <code>node_modules/</code>
+                                                        directory to <code>pages/assets/</code> directory according to
+                                                        the <code>Paths.DEPENDENCIES</code> object declared in
+                                                        <code>gulpfile.js</code>.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap"><code>watch</code></td>
+                                                    <td>All of the following folders are monitored for changes, which
+                                                        will tell the browser to reload automatically after any changes
+                                                        are made:
+                                                                                </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap"><code>serve</code></td>
+                                                    <td>Starts a <code>Browsersync</code> instance on port
+                                                        <code>3000</code> served from <code>pages</code>, defaults to
+                                                        <code>index.html</code>.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <h5 class="mt-5">Other available gulp tasks</h5>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-light text-center text-sans-serif">
+                                                <tr>
+                                                    <th class="text-nowrap">Task</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-nowrap"><code>scss:min</code></td>
+                                                    <td>Compiles <code>scss/theme.scss</code> and generates
+                                                        <code>theme.min.css</code>, and <code>theme.min.map</code> to
+                                                        the <code>pages/assets/css/ </code> directory.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap"><code>scss:rtl</code></td>
+                                                    <td>Compiles <code>scss/theme.scss</code> and generates
+                                                        <code>theme-rtl.css</code>, and <code>theme-rtl.map</code> to
+                                                        the <code>pages/assets/css/ </code> directory.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap"><code>scss:rtl:min</code></td>
+                                                    <td>Compiles <code>scss/theme.scss</code> and generates
+                                                        <code>theme-rtl.min.css</code>, and
+                                                        <code>theme-rtl.min.map</code> to the
+                                                        <code>pages/assets/css/ </code> directory.
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <h3 class="pt-5 pt-lg-6" id="adding-new-page">Adding a New Page
+                                        <a href="#adding-new-page">#</a>
+                                    </h3>
+                                    <p class="mt-4">To add/replace a new page in <code>Boots4 v3.0.0 </code>you should
+                                        set a unique id to <code>.page </code>element and also assign it to
+                                        <code>data-content </code>attribute of <code>.sidebar-item-wrapper </code>for
+                                        navigating this
+                                        page from sidebar nav. For example, if we want to add <strong>feature
+                                        </strong>page in <code>nav-four-item-two-column.html </code>the following code
+                                        need to set inside <code>#gridNav </code></p>
+                                 
+                                    <p class="mt-4">Now <code>four-item-two-column.html </code>page structure will look
+                                        like this</p>
+                         
+                                    <h3 class="pt-5 pt-lg-6" id="adding-new-plugin">Adding a New Plugin
+                                        <a href="#adding-new-plugin">#</a>
+                                    </h3>
+                                    <p>Adding a new plugin to your Boots4 is simple. You Here are two ways you can do
+                                        that.</p>
+                                    <h5 class="mt-4">Simple approach</h5>
+                                    <p>Place your new plugin in <code>pages/assets/lib</code> folder. Eg: to add the
+                                        <code>lightbox.js</code> plugin, we will download it from
+                                        <a href="https://lokeshdhakar.com/projects/lightbox2/">here,</a> unzip it and
+                                        place the <code>lightbox2</code> folder in <code>pages/assets/lib</code> folder.
+                                    </p>
+                                    <h5 class="mt-4">Using NPM</h5>
+                                    <p>Suppose we are installing the <code>lightbox.js</code> plugin. Here are the
+                                        steps:</p>
+                                    <p class="font-weight-bold text-sans-serif mb-0">Step 1:</p>
+                                    <p class="font-weight-bold text-sans-serif mb-0 mt-3">Step 2:</p>
+                                    <p>In your <code>gulpfile.js</code>, add the plugin at the end of the
+                                        <code>Paths.DEPENDENCIES</code> variable. eg:</p>
+                       
+                                    <p>Here, <code>JS</code> refers to <code>pages/assets/js</code> and <code>lib</code>
+                                        refers to <code>pages/assets/lib</code>, where gulp will copy files from the
+                                        <code>lightbox.js</code> plugin. We use the <code>JS</code> folder when
+                                        we need only the js files from the plugin. Otherwise, we use the
+                                        <code>lib</code> folder for plugins like <code>owl.carousel</code></p>
+                                    <p class="font-weight-bold text-sans-serif mb-0 mt-3">Step 3:</p>
+                                    <p>Run the following command:</p>
+                          
+                                    <hr class="text-9 mt-6" />
+                                    <h3 class="pt-5 pt-lg-6" id="theme-plugins">Built-in plugins
+                                        <a href="#theme-plugins">#</a>
+                                    </h3>
+                                    <h4 class="mt-5 contains-anchor" id="count-up">Count Up
+                                        <a href="#count-up">#</a>
+                                    </h4>
+                                    <p class="mb-0">A simple and html agnostic countup plugin for jQuery</p>
+                                    <a class="text-sans-serif"
+                                        href="nav-eight-item-four-column.html#fun-facts">Implimentation in Boots4</a>
+                                    <h5 class="mt-3">Example</h5>
+                         
+                                    <h4 class="mt-5 contains-anchor" id="isotope">Isotope
+                                        <a href="#isotope">#</a>
+                                    </h4>
+                                    <p class="mb-0">Filter & sort magical layouts.</p>
+                                    <a class="text-sans-serif"
+                                        href="https://isotope.metafizzy.co/layout-modes/masonry.html">Masonry</a> -
+                                    <a class="text-sans-serif"
+                                        href="https://isotope.metafizzy.co/filtering.html">Filter</a> -
+                                    <a class="text-sans-serif"
+                                        href="nav-eight-item-four-column.html#boots4-projects">Implimentation in
+                                        Boots4</a>
+                                    <h4 class="pt-5 contains-anchor" id="docs-lightbox">Lightbox 2
+                                        <a href="#docs-lightbox">#</a>
+                                    </h4>
+                                    <p class="mb-0">Lightbox is a JavaScript library that displays images and videos by
+                                        filling the screen, and dimming out the rest of the web page.</p>
+                                    <a class="text-sans-serif"
+                                        href="nav-eight-item-four-column.html#boots4-projects">Implimentation in
+                                        Boots4</a> -
+                                    <a class="text-sans-serif" href="https://lokeshdhakar.com/projects/lightbox2/"
+                                        target="_blank">Full Documentation</a>
+                                    <h5 class="mt-3">Example</h5>
+                                   
+                                    <h4 class="pt-5 contains-anchor" id="owl-carousel">Owl carousel 2
+                                        <a href="#owl-carousel">#</a>
+                                    </h4>
+                                    <p class="mb-0">Touch enabled jQuery plugin that lets you create a beautiful
+                                        responsive carousel slider.</p>
+                                    <a class="text-sans-serif"
+                                        href="nav-eight-item-four-column.html#owl-slide">Implementation in Boots4</a> -
+                                    <a class="text-sans-serif"
+                                        href="https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html">Full
+                                        Documentation</a>
+                                    <h5 class="mt-3">Example</h5>
+                                  
+                                    <h4 class="pt-5 contains-anchor" id="rellax">Rellax
+                                        <a href="#rellax">#</a>
+                                    </h4>
+                                    <p class="mb-0">Rellax is a buttery smooth, super lightweight (1021bytes gzipped),
+                                        vanilla javascript parallax library.</p>
+                                    <a class="text-sans-serif" href="https://dixonandmoe.com/rellax/"
+                                        target="_blank">Full Documentation</a>
+                                    <h4 class="pt-5 contains-anchor" id="remodal">Remodal
+                                        <a href="#remodal">#</a>
+                                    </h4>
+                                    <p class="mb-0">Responsive, lightweight, fast, synchronized with CSS animations,
+                                        fully customizable modal window plugin with declarative configuration and hash
+                                        tracking.</p>
+                                    <a class="text-sans-serif" href="nav-eight-item-four-column.html#boots4-story"
+                                        target="_blank">Implimentation in Boots4</a> -
+                                    <a class="text-sans-serif" href="http://vodkabears.github.io/remodal/"
+                                        target="_blank">Full Documentation</a>
+                                    <h5 class="mt-3">Example</h5>
+                                   
+                                    <h4 class="pt-5 contains-anchor" id="semantic">Semantic UI (Accordion)
+                                        <a href="#semantic">#</a>
+                                    </h4>
+                                    <p class="mb-0">An accordion allows users to toggle the display of sections of
+                                        content.</p>
+                                    <a class="text-sans-serif" href="nav-eight-item-four-column.html#faq">Implimentation
+                                        in Boots4</a> -
+                                    <a class="text-sans-serif" href="https://semantic-ui.com/modules/accordion.html"
+                                        target="_blank">Full Documentation</a>
+                                    <h5 class="mt-3">Example</h5>
+                         
+                                    <h4 class="pt-5 contains-anchor" id="ytplayer">jQuery.mb.YTPlayer
+                                        <a href="#ytplayer">#</a>
+                                    </h4>
+                                    <p class="mb-0">An HTML5 Background player for YouTube video.</p>
+                                    <a class="text-sans-serif" href="nav-four-item-one-column.html"
+                                        target="_blank">Implimentation in boots4</a> -
+                                    <a class="text-sans-serif"
+                                        href="https://pupunzi.com/mb.components/mb.YTPlayer/demo/demo.html"
+                                        target="_blank">Full Documentation</a>
+                                    <h5 class="mt-3">Example</h5>
+                               
+                                    <h4 class="pt-5 contains-anchor" id="loaders">Loaders.css
+                                        <a href="#loaders">#</a>
+                                    </h4>
+                                    <p class="mb-0">Delightful and performance-focused pure css loading animations. </p>
+                                    <a class="text-sans-serif" href="https://github.com/ConnorAtherton/loaders.css"
+                                        target="_blank">Full Documentation</a>
+                                    <h4 class="pt-5 contains-anchor" id="sticky-kit">Sticky Kit
+                                        <a href="#sticky-kit">#</a>
+                                    </h4>
+                                    <p class="mb-0">Sticky-kit provides an easy way to attach elements to the page when
+                                        the user scrolls such that the element is always visible.</p>
+                                    <p class="mb-0">Use <code>class="sticky-kit" </code> on any dom element to make it
+                                        sticky relative to it's parent.</p>
+                                    <a class="text-sans-serif" href="http://leafo.net/sticky-kit/" target="_blank">Full
+                                        Documentation</a>
+                                    <h3 class="pt-5 pt-lg-6" id="php-ajax-form">PHP-AJAX Form
+                                        <a href="#php-ajax-form">#</a>
+                                    </h3>
+                                    <p>Boots4 has a built-in universal php-ajax form that can grab dynamic amounts of
+                                        inputs and send it to any given email address. To make the form work, simply add
+                                        the class <code>.zform</code> like
+                                        <code>&lt;form class=&quot;zform&quot;&gt;</code>.</p>
+                                    <p>You can also specify where to send the data via an hidden input:</p>
+                               Other reserved <code>name</code> fields are: <code>subject</code>,
+                                    <code>email</code>, <code>name</code>
+                                    <p class="mt-3 mb-5">See the sample code under the form bellow for better
+                                        understanding.</p>
+                                    <form class="zform" method="post">
+                                        <div class="form-group">
+                                            <input class="form-control" type="hidden" name="to"
+                                                value="username@domain.extension" />
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-2 col-form-label text-right">Name :</label>
+                                            <div class="col-10">
+                                                <input class="form-control" type="text" name="name" required="" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-2 col-form-label text-right">Subject :</label>
+                                            <div class="col-10">
+                                                <input class="form-control" type="text" name="subject" required="" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-2 col-form-label text-right">Email :</label>
+                                            <div class="col-10">
+                                                <input class="form-control" type="email" name="from" required="" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-2 col-form-label text-right">Field One :</label>
+                                            <div class="col-10">
+                                                <input class="form-control" type="text" name="field-1"
+                                                    placeholder="Optional" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-2 col-form-label text-right">Field Two :</label>
+                                            <div class="col-10">
+                                                <input class="form-control" type="text" name="field-2"
+                                                    placeholder="Optional" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-2 col-form-label text-right">Message :</label>
+                                            <div class="col-10">
+                                                <textarea class="form-control" rows="8" name="message"
+                                                    placeholder="Write your message here..."></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-10 offset-2">
+                                                <input class="btn btn-primary" type="submit" name="submit"
+                                                    value="Send!" />
+                                            </div>
+                                        </div>
+                                        <div class="zform-feedback"></div>
+                                    </form>
+                                    <h5 class="mt-5">HTML</h5>
+                                    
+                                    <a href="https://developers.google.com/recaptcha/docs/display" target="_blank">
+                                        <h5 class="mt-7">Integrating reCaptcha</h5>
+                                    </a>
+                                    <p>Get your secret and site key
+                                        <a class="color-primary" href="https://www.google.com/recaptcha/intro/"
+                                            target="_blank">here ⟶</a>
+                                    </p>
+                                    <h5 class="mt-5">HTML</h5>
+
+                                    <h5 class="mt-5">PHP</h5>
+                                    <p>Open <code>assets/php/form-processor.php</code> and change the secret key with
+                                        yours at <code>line: 13</code></p>
+                                
+                                    <h3 class="pt-5 pt-lg-6" id="google-map">Google Map
+                                        <a href="#google-map">#</a>
+                                    </h3>
+                                    <div class="googlemap minh-50vh" data-latlng="48.8583701,2.2922873,17"
+                                        data-scrollwheel="false" data-icon="assets/img/map-marker.png" data-zoom="17"
+                                        data-theme="Default">
+                                        <div class="marker-content py-3">
+                                            <h5>Eiffel Tower</h5>
+                                            <p>Gustave Eiffel's iconic, wrought-iron 1889 tower,
+                                                <br /> with steps and elevators to observation decks.</p>
+                                        </div>
+                                    </div>
+                                    <h5 class="mt-5">HTML</h5>
+                                
+                                    <h5 class="mt-5">JavaScript</h5>      
+                                    <h5 class="mt-5">Map color schemes</h5>
+                                    <p>Change the value of <code>data-theme=''</code> to any of the followings</p>
+                                    <ul>
+                                        <li><code>Default</code></li>
+                                        <li><code>Gray</code></li>
+                                        <li><code>Midnight</code></li>
+                                        <li><code>Hopper</code></li>
+                                        <li><code>Beard</code></li>
+                                        <li><code>AssassianCreed</code></li>
+                                        <li><code>SubtleGray</code></li>
+                                        <li><code>Tripitty</code></li>
+                                    </ul>
+                                    <h5 class="mt-5">Example</h5>
+                                    <p>With <code>AssassianCreed</code> scheme</p>
+                                    <div class="googlemap minh-50vh" data-latlng="48.8583701,2.2922873,17"
+                                        data-scrollwheel="false" data-icon="assets/img/map-marker.png" data-zoom="17"
+                                        data-theme="AssassianCreed">
+                                        <div class="marker-content py-3">
+                                            <h5>Eiffel Tower</h5>
+                                            <p>Gustave Eiffel's iconic, wrought-iron 1889 tower,
+                                                <br /> with steps and elevators to observation decks.</p>
+                                        </div>
+                                    </div>
+                                    <h5 class="mt-5">HTML</h5>
+                    
+                                    <h5 class="mt-5">Example of street view</h5>
+                                    <div class="googlemap minh-100vh" data-latlng="48.8588723,2.2932638"
+                                        data-pov='{"heading":120,"pitch":0}' data-scrollwheel="false"
+                                        data-icon="assets/img/map-marker.png" data-zoom="1" data-theme="streetview">
+                                    </div>
+                                    <h5 class="mt-5">HTML</h5>
+                       
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of .container-->
+
+            </section>
 
             <footer class="page-footer">
                 <div class="container-fluid copyright">
@@ -133,13 +617,17 @@
                             <img src="assets/img/examples/LOGO_CABECERA.png" class="sticky-area img-fluid mh-100 h-auto w-100 py-1"
                                 alt="Logo header">
                         </div>
-                        <div class="col container-menu-mobile px-3" (click)="openMenuMovil($event)">
-                            <i class="fas fa-bars fa-2x"></i>
-                        </div>
+                    <div class="col container-menu-mobile px-3" *ngIf="!showMenuMovil" (click)="openMenuMovil($event)">
+                        <i class="fas fa-bars fa-2x"></i>
+                    </div>
+                    <div class="col container-menu-mobile px-3" *ngIf="showMenuMovil" (click)="cerrarMenu($event)">
+                        <i class="fas fa-times fa-2x"></i>
+                    </div>
                     </div>
                 </div>
                 <h1 class="page-title">{{title}}</h1>
             </div>
+            <app-menu-mobile *ngIf="showMenuMovil" [paginas]="current"></app-menu-mobile>
         </div>
     </div>
 </div>

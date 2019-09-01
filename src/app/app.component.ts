@@ -9,9 +9,20 @@ import { Component, OnInit, ViewChild, Input } from '@angular/core';
 export class AppComponent implements OnInit{
   @Input() instance: number;
   showMenuMovil:boolean=false;
+
   openMenuMovil(event){
     event.preventDefault();
     this.showMenuMovil = true;
+  }
+  cerrarMenu(event){
+    // let self=this;
+    // const menu = $(".container-fullpage-menu");
+    // menu.addClass("fadeOut");
+    // menu.bind('animationend', function () {
+    //   self.showMenuMovil =false;
+    // });
+    event.preventDefault();
+    this.showMenuMovil =false;
   }
   carousel: any = [
     {
@@ -214,7 +225,19 @@ export class AppComponent implements OnInit{
           "path": "directorio",
           "status": 1,
           "created_at": "2017-09-06T15:59:49.000-03:00",
-          "updated_at": "2017-11-17T19:44:24.000-03:00"
+          "updated_at": "2017-11-17T19:44:24.000-03:00",
+          "children":[
+            {
+              "id": 2,
+              "section_type_id": 4,
+              "title": "Item de prueba 6",
+              "description": null,
+              "position": 1,
+              "parent": 1,
+              "path": "prueba6",
+              "status": 1,
+            }
+          ]
         }
       ]
     },
@@ -461,13 +484,6 @@ export class AppComponent implements OnInit{
   ]
   constructor(){}
   ngOnInit(): void {
-    // $(".menu-mobile").click(function(e){
-    //   e.preventDefault();
-    //   console.log("mehan presionao");
-    // })
-    let self=this;
-    $(".container-fullpage-menu .close").on('click',function(){
-      self.showMenuMovil =false;
-    })
+
   }
 }

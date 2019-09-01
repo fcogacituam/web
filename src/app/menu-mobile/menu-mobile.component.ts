@@ -7,33 +7,36 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class MenuMobileComponent implements OnInit {
   @Input('paginas') paginas: any;
-  @Output() closeMenu = new EventEmitter();
+ 
 
-  close=true;
-
-  onCloseMenuMovile(close) {
-    let self=this;
-    console.log("click event en hijo",close)
-    const menu = $(".container-fullpage-menu");
-    menu.addClass("fadeOut");
-    menu.bind('animationend',function(){
-      self.closeMenu.emit(close);
-    });
-    // this.closeMenu.emit(close);
-  }
-
-  saludar(){
-    console.log("wena wnnnnnnnn")
-  }
-
-
-
+  // close=true;
   constructor() { }
 
 
  
   ngOnInit() {
     console.log("PAGINAS CURRENT",this.paginas);
+    let self=this;
+    $(document).ready(function(){
+      $(".expand").on('click', function (el) {
+        $("svg",el.currentTarget).toggleClass("fa-plus fa-minus");
+        var parent = el.currentTarget.parentNode.parentNode;
+        $(".child",parent).toggleClass("d-none");
+      });
+
+      $(".expand2").on('click', function (el) {
+        $("svg", el.currentTarget).toggleClass("fa-plus fa-minus");
+        var parent = el.currentTarget.parentNode.parentNode;
+        $(".firstChild", parent).toggleClass("d-none");
+      });
+
+      $(".expand3").on('click', function (el) {
+        $("svg", el.currentTarget).toggleClass("fa-plus fa-minus");
+        var parent = el.currentTarget.parentNode.parentNode;
+        $(".secondChild", parent).toggleClass("d-none");
+      });
+    })
+    
   }
 
 }

@@ -78,7 +78,10 @@ h1,h2,h3{
   z-index: 200;
   position: fixed;
   bottom: 1%;
+  right:27%;
 }
+.accesibilidad .search.toUp{width: 80%!important;}
+.accesibilidad .search input{width: 400px!important;}
 .carousel{
     z-index: 100;
 }
@@ -201,3 +204,20 @@ footer{
 
 .wcircle-icon {
 }
+
+
+
+
+
+
+@media (max-width: 576px) {  }
+
+@media (max-width: 768px) {  }
+
+@media (max-width: 992px) { 
+  .accesibilidad{
+    right: 4%;
+  }
+}
+
+@media (max-width: 1200px) {  }

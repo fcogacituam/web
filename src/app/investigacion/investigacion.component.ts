@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output ,EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-investigacion',
@@ -9,13 +9,23 @@ export class InvestigacionComponent implements OnInit {
 
   @Input() carreras: any;
   @Input() paginas: any;
+  @Output() closeMenu = new EventEmitter();
   // @Input() title:string;
 
   hash: string;
   title:string;
   current:any;
   showMenuMovil:boolean = false;
-
+  onCloseMenuMovile(close) {
+    let self = this;
+    console.log("click event en hijo", close)
+    const menu = $(".container-fullpage-menu");
+    menu.addClass("fadeOut");
+    menu.bind('animationend', function () {
+      self.closeMenu.emit(close);
+    });
+    // this.closeMenu.emit(close);
+  }
   cerrarMenu(e){
     this.showMenuMovil=false;
   }

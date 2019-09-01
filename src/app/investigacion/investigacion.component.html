@@ -3,8 +3,7 @@
         <div class="col-lg-9 order-1 order-lg-0 page-content pt-0 pt-lg-0">
 
             <app-menu [paginas]="paginas" (current)="setCurrent($event)"></app-menu>
-            <app-menu-mobile *ngIf="showMenuMovil" [paginas]="current" (closeMenu)="cerrarMenu($event)"></app-menu-mobile>
-            <div class="accesibilidad col-lg-9">
+            <div class="accesibilidad">
                 <app-inclusion display="up"></app-inclusion>
             </div>
             <!-- ============================================-->
@@ -13,7 +12,7 @@
             <div class="container-fluid">
                 <div class="row justify-content-center pb-5">
                     <div class="col-lg-10">
-                        <div class="text-center mb-5 mb-lg-6">
+                        <div class="text-center pt-6 pt-md-4 pt-lg-0 mb-5 mb-lg-6">
                             <h2 class="fs-2 fs-sm-3"> <span class="font-weight-medium">Conoce Nuestras </span>
                                 Carreras</h2>
                             <hr class="hr-ornate" />
@@ -49,17 +48,25 @@
 
             <div class="bg-holder d-flex d-sm-flex d-md-inline" style="background-image:url(https://picsum.photos/400/1000);">
                 <div class="bg-color"></div>
-                    <div  class="menu-mobile d-flex d-lg-none ml-5">
-                        <div class="col-6">
-                            <img src="assets/img/examples/LOGO_CABECERA.png" class="sticky-area img-fluid mh-100 h-auto w-100 py-1" alt="Logo header">
-                        </div>
-                        <div class="col container-menu-mobile px-3" (click)="openMenuMovil($event)">
-                            <i class="fas fa-bars fa-2x"></i>
-                        </div>
+                <div  class="menu-mobile d-flex d-lg-none ml-5">
+                    <div class="col-6">
+                        <img src="assets/img/examples/LOGO_CABECERA.png" class="sticky-area img-fluid mh-100 h-auto w-100 py-1" alt="Logo header">
+                    </div>
+                    <div class="col container-menu-mobile px-3" *ngIf="!showMenuMovil" (click)="openMenuMovil($event)">
+                        <i class="fas fa-bars fa-2x"></i>
+                    </div>
+                    <div class="col container-menu-mobile px-3" *ngIf="showMenuMovil" (click)="cerrarMenu($event)">
+                        <i class="fas fa-times fa-2x"></i>
                     </div>
                 </div>
+
+            </div>
+            
+
                 <h1 class="page-title">{{title}}</h1>
             </div>
+            <app-menu-mobile *ngIf="showMenuMovil" [paginas]="current"></app-menu-mobile>
         </div>
+        
     </div>
 </div>

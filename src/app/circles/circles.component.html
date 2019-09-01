@@ -23,7 +23,7 @@
                 <ng-template #contenido>
                     <h5>{{activeData.title}}</h5>
                     <p class="p-0 m-0">{{desc}}</p>
-                    <a class="btn-slide" href="{activeData.href}">Ver más</a>
+                    <a class="btn-slide menu-action-trigger" [attr.data-content]="activeData.href" >Ver más</a>
                 </ng-template>
                 
             </div>
