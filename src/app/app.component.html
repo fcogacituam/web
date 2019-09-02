@@ -9,6 +9,24 @@
   <div id="preloader">
     <div class="loader"><span></span><span></span><span></span><span></span></div>
   </div>
+  <div *ngFor="let pag of paginas" class="d-none">
+    <span class="menu-action-trigger" [attr.data-content]="pag.path">{{pag.title}}</span>
+    <div *ngIf="pag.children">
+      <div *ngFor="let subp of pag.children">
+        <span class="menu-action-trigger" [attr.data-content]="subp.path">{{subp.title}}</span>
+        <div *ngIf="subp.children">
+          <div *ngFor="let subp2 of subp.children">
+            <span class="menu-action-trigger" [attr.data-content]="subp2.path">{{subp2.title}}</span>
+            <div *ngIf="subp2.children">
+              <div *ngFor="let subp3 of subp2.children">
+                <span class="menu-action-trigger" [attr.data-content]="subp3.path">{{subp3.title}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- ============================================-->
   <!-- End of Preloader ===========================-->
 
@@ -113,7 +131,7 @@
       <app-admision [paginas]="paginas"></app-admision>
       <app-vinculacion [paginas]="paginas"></app-vinculacion>
       <app-noticias-y-eventos [paginas]="paginas"></app-noticias-y-eventos>
-      <app-default></app-default>
+      <app-default [paginas]="paginas"></app-default>
 
 
 

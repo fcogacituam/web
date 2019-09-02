@@ -1444,11 +1444,28 @@ spUtils.$document.ready(function () {
   // ─── GET ALL PAGE NAME ──────────────────────────────────────────────────────────
   //
 
+  // $(document).ready(function(){
+  //   setTimeout(function () {
+  //     $(Selector.SIDEBAR_ITEM_WRAPPER).each(function (item, value) {
+  //       console.log(value);
+  //       var $this = $(value);
+  //       pages.push($this.data(DataKey.CONTENT));
+  //       console.log(pages);
+  //     }); //
+  //   }, 500)
+  // })
+  $(document).ready(function () {
+    setTimeout(function () {
+      $(Selector.SIDEBAR_ITEM_WRAPPER).each(function (item, value) {
+        var $this = $(value);
+        pages.push($this.data(DataKey.CONTENT));
+       
+      }); //
+      console.log(pages);
+    }, 500)
+  })
 
-  $(Selector.SIDEBAR_ITEM_WRAPPER).each(function (item, value) {
-    var $this = $(value);
-    pages.push($this.data(DataKey.CONTENT));
-  }); //
+
   // ─── GOToContent TO PAGE ─────────────────────────────────────────────────────────────────
   //
 
@@ -1544,7 +1561,7 @@ spUtils.$document.ready(function () {
     if (document.getElementById(hash.substr(1))) {
       pageId = $(hash).closest('.page').attr('id');
     }
-
+    
     if ($.inArray(hash.substr(1), pages) > -1) {
       goToPage(hash.substr(1));
     } else if ($.inArray(pageId, pages) > -1) {
@@ -1574,7 +1591,6 @@ spUtils.$document.ready(function () {
       content = $this.closest(Selector.SIDEBAR_ITEM_WRAPPER).data(DataKey.CONTENT);
       console.log("content",content)
       if(! $("#"+content).length){
-        console.log("no existe un template para esta sección");
         $(".default-page").attr('id',content);
       }
 
@@ -1598,30 +1614,35 @@ spUtils.$document.ready(function () {
 
   window.onhashchange = function () {
     
-    $(Selector.SIDEBAR_ITEM_WRAPPER).each(function (item, value) {
-      var $this = $(value);
-      var found = jQuery.inArray($this.data(DataKey.CONTENT),pages);
-      if (found >=0) {
+    // $(Selector.SIDEBAR_ITEM_WRAPPER).each(function (item, value) {
+    //   var $this = $(value);
+    //   var found = jQuery.inArray($this.data(DataKey.CONTENT),pages);
+    //   if (found >=0) {
         
-      }else{
-        pages.push($this.data(DataKey.CONTENT));
+    //   }else{
+    //     pages.push($this.data(DataKey.CONTENT));
 
-      }
-    });
+    //   }
+    // });
 
-      
-
-    console.log("PAGINAS",pages);
     var url = window.location.href;
-    var hash = window.location.hash;
+    var hash = window.location.hash.substr(1);
     var pageId
+    console.log("url", url)
+    console.log("hash", hash)
     if (document.getElementById(hash.substr(1))) {
       pageId = $(hash).closest('.page').attr('id');
+      
     }
 
     var currentPage = $('.page:visible').attr('id');
 
     if ($.inArray(window.location.hash.substr(1), pages) > -1) {
+      if (!$("#" + hash).length) {
+        $(".default-page").attr('id', hash);
+      }else{
+      }
+      window.location.hash = hash;
       goToPage(window.location.hash.substr(1));
     } else if ($.inArray(pageId, pages) > -1) {
       if (currentPage !== pageId) {

@@ -356,7 +356,7 @@ export class AppComponent implements OnInit{
           "description": null,
           "position": 1,
           "parent": 0,
-          "path": "centro-de-enseñanza-y-aprendizaje",
+          "path": "centro-de-ensenanza-y-aprendizaje",
           "status": 1,
         },
         {
