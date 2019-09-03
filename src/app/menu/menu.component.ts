@@ -13,7 +13,6 @@ export class MenuComponent implements OnInit {
 
 
   onsetCurrentPage(page){
-    console.log("me llego estoooooo",page)
     this.current.emit(page);
   }
 
@@ -49,14 +48,10 @@ export class MenuComponent implements OnInit {
       self.currentPage = [];
       singlePage= [];
       let newHash= window.location.hash.substring(1);
-      this.console.log("newhash",newHash)
-      this.console.log("PAGIGIANANSA",self.paginas);
-      this.console.log("lengthh",self.paginas.length);
+
       for (let i = 0; i < self.paginas.length; i++) {
         const el = self.paginas[i];
-        this.console.log("elemento I"+i, el);
         if(el.path == newHash){
-          this.console.log("ENCONTRE LA PAAGINA ",el);
           singlePage.push(el);
           self.onsetCurrentPage(el);
           self.currentPage = singlePage;
@@ -65,9 +60,7 @@ export class MenuComponent implements OnInit {
           if (el.children) {
             for (let j = 0; j < el.children.length; j++) {
               const el2 = el.children[j];
-              this.console.log("elemento J "+j,el2);
               if(el2.path == newHash){
-                this.console.log("ENCONTRE LA PAAGINA ", el2);
                 singlePage.push(el2);
                 self.onsetCurrentPage(el2);
                 self.currentPage = singlePage;
@@ -76,9 +69,7 @@ export class MenuComponent implements OnInit {
                 if(el2.children){
                   for(let k=0; k < el2.children.length; k++){
                     const el3 = el2.children[k]
-                    this.console.log("elemento K " + k, el3);
                     if (el3.path == newHash) {
-                      this.console.log("ENCONTRE LA PAAGINA ", el3);
                       singlePage.push(el3);
                       self.onsetCurrentPage(el3);
                       self.currentPage = singlePage;
@@ -87,9 +78,7 @@ export class MenuComponent implements OnInit {
                       if (el3.children){
                         for (let m = 0; m < el3.children.length; m++) {
                           const el4 = el3.children[m];
-                          this.console.log("elemento M " + m, el4);
                           if (el4.path == newHash) {
-                            this.console.log("ENCONTRE LA PAAGINA ", el4);
                             singlePage.push(el4);
                             self.onsetCurrentPage(el4);
                             self.currentPage = singlePage;

@@ -7,6 +7,7 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class UniversidadComponent implements OnInit {
   @Input() paginas: any;
+  @Input() color:string;
 
   hash: string;
   title: string;
@@ -28,7 +29,7 @@ export class UniversidadComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
+    
   }
 
 }

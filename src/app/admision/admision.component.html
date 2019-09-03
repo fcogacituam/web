@@ -142,7 +142,7 @@
                         width="18" alt="" /></span>
                 <div class="bg-holder d-flex d-sm-flex d-md-inline"
                     style="background-image:url(https://picsum.photos/400/1005);">
-                    <div class="bg-color"></div>
+                    <div class="bg-color"  [ngStyle]="{'background':'linear-gradient( rgb('+color+') 40%, rgba('+color+',.4) )'}"></div>
                     <div class="menu-mobile d-flex d-lg-none ml-5">
                         <div class="col-6">
                             <img src="assets/img/examples/LOGO_CABECERA.png"

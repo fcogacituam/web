@@ -14,7 +14,7 @@
     <li class="circle-menu">1</li>
     <li class="circle-menu">1</li>
 </ul> -->
-<div class="container-circulos" [ngStyle]="{'height': props.height+'px'}">
+<div class="container-circulos d-none d-md-flex" [ngStyle]="{'height': props.height+'px'}">
     <div class="circulo-exterior" [ngStyle]="{'background':props.bg}">
        
         <div class="shape">
@@ -23,7 +23,7 @@
                 <ng-template #contenido>
                     <h5>{{activeData.title}}</h5>
                     <p class="p-0 m-0">{{desc}}</p>
-                    <a class="btn-slide menu-action-trigger" [attr.data-content]="activeData.href" >Ver más</a>
+                    <a class="btn-slide menu-action-trigger" [attr.data-content]="activeData.href.substr(1)" >Ver más</a>
                 </ng-template>
                 
             </div>
@@ -42,4 +42,17 @@
             {{carrera.title}}
         </div>
     </div>
+</div>
+
+<div class="d-flex d-md-none flex-column container">
+    <div *ngFor="let carrera of datos" class="d-flex py-4 px-2 align-items-center circulos-mobile">
+        <div class="col-3">
+            <img src="assets/img/icons/earth.png" alt="" class="img-flex w-100"> 
+        </div>
+        <div class="col-9 d-flex flex-column">
+            <h3>{{carrera.title}}</h3>
+            <a class="menu-action-trigger" [attr.data-content]="carrera.href.substr(1)">VER MÁS</a>
+        </div>
+    </div>
+    
 </div>

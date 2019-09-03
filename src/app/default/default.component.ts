@@ -7,7 +7,7 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class DefaultComponent implements OnInit {
   @Input() paginas: any;
-
+  @Input() color: string;
   hash: string;
   title: string;
   current: any ={
@@ -24,7 +24,6 @@ export class DefaultComponent implements OnInit {
   }
 
   setCurrent(page) {
-    console.log("SET CURRENTTNTNTNNT",page)
     this.current = page;
     this.title = page.title;
   }

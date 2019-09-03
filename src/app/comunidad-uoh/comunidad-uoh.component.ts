@@ -8,11 +8,12 @@ import { Component, OnInit,Input } from '@angular/core';
 export class ComunidadUohComponent implements OnInit {
 
   @Input() paginas: any;
-
+  @Input() color: string;
   hash: string;
   title: string;
   current: any;
   showMenuMovil: boolean = false;
+  
 
   cerrarMenu(e) {
     this.showMenuMovil = false;

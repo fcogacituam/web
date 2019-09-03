@@ -7,7 +7,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class MenuMobileComponent implements OnInit {
   @Input('paginas') paginas: any;
- 
 
   // close=true;
   constructor() { }
@@ -15,7 +14,6 @@ export class MenuMobileComponent implements OnInit {
 
  
   ngOnInit() {
-    console.log("PAGINAS CURRENT",this.paginas);
     let self=this;
     $(document).ready(function(){
       $(".expand").on('click', function (el) {

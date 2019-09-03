@@ -111,3 +111,20 @@
 .circulo-title{
   max-width: 200px;
 }
+
+.circulos-mobile{
+  background: #faf6fb;
+  /* transition: all ease .4s;
+  -webkit-transition: all ease .4s;
+  -moz-transition: all ease .4s;
+  -ms-transition: all ease .4s;
+  -o-transition: all ease .4s; */
+}
+
+.circulos-mobile:hover{
+  background: #1a1a1a;
+}
+.circulos-mobile:hover h3{
+  color: #fff;
+}
+.circulos-mobile a{cursor: pointer;}

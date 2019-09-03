@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NoticiasYEventosComponent implements OnInit {
 
   @Input() paginas: any;
-
+  @Input() color: string;
   hash: string;
   title: string;
   current: any;

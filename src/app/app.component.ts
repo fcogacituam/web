@@ -10,6 +10,21 @@ export class AppComponent implements OnInit{
   @Input() instance: number;
   showMenuMovil:boolean=false;
 
+
+  colores:any =[
+    "0, 117, 201",
+    "247, 217, 62",
+    "63, 174, 42", 
+    "0, 168, 135",
+    "198, 9, 59", 
+    "64, 180, 229"
+  ];
+
+
+
+
+
+
   openMenuMovil(event){
     event.preventDefault();
     this.showMenuMovil = true;
@@ -260,7 +275,7 @@ export class AppComponent implements OnInit{
           "description": null,
           "position": 1,
           "parent": 0,
-          "path": "investigacion",
+          "path": "institutos",
           "status": 1,
           "children":[
             {

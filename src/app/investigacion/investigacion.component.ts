@@ -9,7 +9,8 @@ export class InvestigacionComponent implements OnInit {
 
   @Input() carreras: any;
   @Input() paginas: any;
-  @Output() closeMenu = new EventEmitter();
+  // @Output() closeMenu = new EventEmitter();
+  @Input() color: string;
   // @Input() title:string;
 
   hash: string;

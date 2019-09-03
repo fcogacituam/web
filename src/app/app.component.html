@@ -95,11 +95,9 @@
 
       <div class="position-relative w-lg-50 position-lg-fixed undefined" id="gridNav">
         <div class="row h-lg-100vh">
-
-
           <div *ngFor="let pagina of paginas; let i = index" class="col-6 col-sm-4 main-pages minh-25vh h-lg-50vh sidebar-item-wrapper py-5 menu-action-trigger" [attr.data-content]="pagina.path">
-            <div class="cover" [ngClass]="'cover'+i"></div>
-            <div class="bg-holder" style="background-image:url(https://picsum.photos/200/300);"></div>
+            <div class="cover" [ngStyle]="{'background-color':'rgba('+colores[i]+',.6)'}"></div>
+            <div class="bg-holder" style="background-image:url(https://picsum.photos/200/300);" ></div>
             <div class="sidebar-item">
               <img class="mb-1 mb-lg-3 nav-icon" src="assets/img/lineicons/favorites.svg" alt="">
               <h2 class="font-weight-light text-white fs-1 fs-xxl-1">{{pagina.title}}</h2>
@@ -125,13 +123,13 @@
 
 
 
-      <app-universidad [paginas]="paginas"></app-universidad>
-      <app-investigacion [carreras]="carreras" [paginas]="paginas"></app-investigacion>
-      <app-comunidad-uoh [paginas]="paginas"></app-comunidad-uoh>
-      <app-admision [paginas]="paginas"></app-admision>
-      <app-vinculacion [paginas]="paginas"></app-vinculacion>
-      <app-noticias-y-eventos [paginas]="paginas"></app-noticias-y-eventos>
-      <app-default [paginas]="paginas"></app-default>
+      <app-universidad [paginas]="paginas" [color]="colores[0]"></app-universidad>
+      <app-investigacion [carreras]="carreras" [paginas]="paginas" [color]="colores[1]"></app-investigacion>
+      <app-comunidad-uoh [paginas]="paginas" [color]="colores[2]"></app-comunidad-uoh>
+      <app-admision [paginas]="paginas" [color]="colores[3]"></app-admision>
+      <app-vinculacion [paginas]="paginas" [color]="colores[4]"></app-vinculacion>
+      <app-noticias-y-eventos [paginas]="paginas" [color]="colores[5]"></app-noticias-y-eventos>
+      <app-default [paginas]="paginas" [color]="colores[0]"></app-default>
 
 
 
