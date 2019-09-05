@@ -17,16 +17,7 @@ export class InvestigacionComponent implements OnInit {
   title:string;
   current:any;
   showMenuMovil:boolean = false;
-  onCloseMenuMovile(close) {
-    let self = this;
-    console.log("click event en hijo", close)
-    const menu = $(".container-fullpage-menu");
-    menu.addClass("fadeOut");
-    menu.bind('animationend', function () {
-      self.closeMenu.emit(close);
-    });
-    // this.closeMenu.emit(close);
-  }
+
   cerrarMenu(e){
     this.showMenuMovil=false;
   }
