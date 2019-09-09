@@ -12,13 +12,16 @@ export class NoticiasYEventosComponent implements OnInit {
   hash: string;
   title: string;
   current: any;
+  currentMenu: any = {
+    "title": ''
+  };
   showMenuMovil: boolean = false;
-
+  sort: any=[];
   noticias:any = [
     {
       "id":0,
       "title": "Noticia 1",
-      "category":"eventos",
+      "category":"noticias",
       "author":"John Doe",
       "excerpt":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus aliquam turpis eget orci blandit lobortis. ",
       "date":"2019-09-04 21:00:00",
@@ -38,7 +41,7 @@ export class NoticiasYEventosComponent implements OnInit {
     {
       "id": 2,
       "title": "Noticia 3",
-      "category": "eventos",
+      "category": "noticias",
       "author": "John Doe",
       "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus aliquam turpis eget orci blandit lobortis. ",
       "date": "2019-09-04 21:00:00",
@@ -58,7 +61,7 @@ export class NoticiasYEventosComponent implements OnInit {
     {
       "id": 4,
       "title": "Noticia 5",
-      "category": "eventos",
+      "category": "egresados",
       "author": "John Doe",
       "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus aliquam turpis eget orci blandit lobortis. ",
       "date": "2019-09-04 21:00:00",
@@ -77,7 +80,21 @@ export class NoticiasYEventosComponent implements OnInit {
     this.current = page;
     this.title = page.title;
   }
-  constructor() { }
+  setMenu(menu) {
+    this.currentMenu = menu;
+  }
+  constructor() {
+    let aux:any = [];
+    let self=this;
+    for (let i = 0; i < this.noticias.length; i++) {
+      const el = this.noticias[i];
+      if ($.inArray(el.category,aux) === -1) {
+        aux.push(el.category);
+      }
+    }
+    this.sort = aux;
+  //  console.log(this.noticias);
+  }
 
   ngOnInit() {}
 

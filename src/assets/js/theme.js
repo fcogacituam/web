@@ -1165,6 +1165,7 @@ spUtils.$window.on('load', function () {
           }
         }));
       });
+
       /*-----------------------------------------------
       |   Flatten object by concatting values
       -----------------------------------------------*/
@@ -1484,6 +1485,7 @@ spUtils.$document.ready(function () {
       $(".foot").addClass("hideFoot");
       switch (content) {
         case 'admision':
+        case 'noticias-y-eventos':
           $(Selector.SORTABLEMENU).find(Selector.ACTIVE).removeClass('active');
           $(Selector.SORTABLEMENU).find(Selector.ITEM).first().addClass('active');
           setTimeout(function () {
@@ -1492,6 +1494,7 @@ spUtils.$document.ready(function () {
             });
           }, 300);
           break;
+        
 
         case 'docs':
           $(Selector.DOCUMENTNAV).removeAttr('style');

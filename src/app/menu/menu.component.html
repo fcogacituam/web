@@ -19,10 +19,9 @@
                                 <h5 class="menu-action-trigger d-inline-block" [attr.data-content]="subp.path">{{subp.title}}</h5>
                                 <div class="col px-3 py-1 m-0" *ngFor="let subp2 of subp.children">
                                     <a class="menu-action-trigger d-inline-block" [attr.data-content]="subp2.path">{{subp2.title}}</a>
-                                    <!-- <a >{{subp2.title}}</a> -->
-                                    <!-- <div class="col" *ngFor="let subp3 of subp2.children">
-                                                    {{subp3.title}}
-                                                </div> -->
+                                    <div class="col" *ngFor="let subp3 of subp2.children">
+                                        <a class="menu-action-trigger d-inline-block" [attr.data-content]="subp3.path">{{subp3.title}}</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

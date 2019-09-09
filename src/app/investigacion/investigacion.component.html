@@ -2,7 +2,7 @@
     <div class="row no-gutters minh-100vh">
         <div class="col-lg-9 order-1 order-lg-0 page-content pt-0 pt-lg-0">
 
-            <app-menu [paginas]="paginas" (current)="setCurrent($event)"></app-menu>
+            <app-menu [paginas]="paginas" (current)="setCurrent($event)"  (menu)="setMenu($event)"></app-menu>
             <div class="accesibilidad">
                 <app-inclusion display="up"></app-inclusion>
             </div>
@@ -42,9 +42,11 @@
             </footer>
         </div>
         <div class="col-lg-3 col-12 t-0 order-0 order-lg-1 position-absolute position-lg-relative">
-            <div class="h-lg-100vh sticky-top py-4 "><span class="btn-close sticky-area"><img
-                        class="d-none d-lg-block times" src="assets/img/times.svg" width="25" alt="" /><img
-                        class="d-lg-none" src="assets/img/times-black.svg" width="18" alt="" /></span>
+            <div class="h-lg-100vh sticky-top py-4 ">
+                <span class="btn-close sticky-area p-1 m-1 p-lg-3 m-lg-3">
+                    <i class="fas fa-home fa-stack-1x fa-inverse d-lg-none"></i>
+                    <img class="d-none d-lg-block times" src="assets/img/times.svg" width="25" alt="" />
+                </span>
 
             <div class="bg-holder d-flex d-sm-flex d-md-inline" style="background-image:url(https://picsum.photos/400/1000);">
                 <div class="bg-color" [ngStyle]="{'background':'linear-gradient( rgb('+color+') 40%, rgba('+color+',.4) )'}"></div>
@@ -65,7 +67,7 @@
 
                 <h1 class="page-title">{{title}}</h1>
             </div>
-            <app-menu-mobile *ngIf="showMenuMovil" [paginas]="current"></app-menu-mobile>
+            <app-menu-mobile *ngIf="showMenuMovil" [paginas]="currentMenu"></app-menu-mobile>
         </div>
         
     </div>

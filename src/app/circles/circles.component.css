@@ -53,6 +53,9 @@
   -o-transition: all ease 1s ;
   cursor: pointer;
 }
+.circulo-item-container{
+  text-decoration: none;
+}
 .circulo-girador{
     width: 25px;
     height: 25px;
@@ -110,8 +113,12 @@
 
 .circulo-title{
   max-width: 200px;
+  color: #888;
 }
-
+.circulo-title.active{
+  color: #000;
+  font-weight: bolder;
+}
 .circulos-mobile{
   background: #faf6fb;
   /* transition: all ease .4s;

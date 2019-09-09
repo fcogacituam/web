@@ -13,6 +13,9 @@ export class DefaultComponent implements OnInit {
   current: any ={
     "title":''
   };
+  currentMenu:any={
+    "title":''
+  };
   showMenuMovil: boolean = false;
 
   cerrarMenu(e) {
@@ -26,6 +29,9 @@ export class DefaultComponent implements OnInit {
   setCurrent(page) {
     this.current = page;
     this.title = page.title;
+  }
+  setMenu(menu){
+    this.currentMenu = menu;
   }
   constructor() { }
 

@@ -21,102 +21,122 @@
 
                             <div class="row">
                                 <div class="container">
-                                    <div class="row">
-                                        <ng-container *ngFor="let new of noticias">
-                                            <!-- VIDEO -->
-                                            <ng-container *ngIf="new.video.length; else imagenes">
-                                                <div class="col-12 col-md-8 py-4">
-                                                    <div class="blog-entry">
-                                                        <div class="blog-img">
-                                                            <div class="video colorlib-video"[ngStyle]="{'background-image':'url( '+new.images+')'}">
-                                                                <div class="overlay"></div>
-                                                                <!-- <div class="position-absolute t-0 l-0 h-100 w-100 d-flex align-items-center justify-content-center"> -->
-                                                                <a class="video-modal d-flex justify-content-center align-items-center"
-                                                                    [href]="new.video">
-                                                                    <i class="fab fa-youtube fa-2x"></i>
-                                                                </a>
-                                                                <!-- </div> -->
-                                                            </div>
-                                                        </div>
-                                                        <div class="desc">
-                                                            <p class="meta">
-                                                                <span class="cat"><a href="">{{new.category}}</a></span>
-                                                                <span class="date">{{new.date}}</span>
-                                                                <span class="pos">By <a href="">{{new.author}}</a></span>
-                                                            </p>
-                                                            <h2><a href="">{{new.title}}</a></h2>
-                                                            <p>{{new.excerpt}}</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                    <div class="row" >
                                         
-                                            </ng-container>
-                                            <ng-template #imagenes>
-                                                <!-- SLIDER -->
-                                                <ng-container *ngIf="new.images.length > 1;else normal">
-                                                    <div class="col-12 col-md-4 py-4">
-                                                        <div class="blog-entry">
-                                                            <div class="blog-slider">
-                                                                <div id="demo" class="carousel slide carousel-fade" data-interval="6000" data-ride="carousel"
-                                                                    data-pause="false">
-                                                                    <!-- The slideshow -->
-                                                                    <div class="carousel-inner">
-                                                                        <div *ngFor="let image of new.images;let first=first" class="carousel-item" [ngClass]="{'active':first}">
-                                                                            <a href="">
-                                                                                <img [src]="image" alt="">
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                        
-                                                                    <!-- Left and right controls -->
-                                                                    <div class="controls position-absolute r-0 t-0 d-flex align-items-center justify-content-center">
-                                                                        <a class="button-control py-3 px-4" href="#demo" data-slide="prev">
-                                                                            <i class="fas fa-arrow-left"></i>
+                                        <div class="sortable w-100" data-options='{"layoutMode":"packery"}'>
+                                            <div class="menu justify-content-center mb-3">
+                                                <div class="item px-3 text-uppercase active" data-filter="*">All</div>
+                                                <div *ngFor="let item of sort" class="item px-3 text-uppercase" [attr.data-filter]="'.'+item">
+                                                    {{item}}
+                                                </div>
+                                                <!-- <div class="item px-3 text-uppercase" data-filter=".noticias">Photography</div>
+                                                <div class="item px-3 text-uppercase" data-filter=".evento">Studio</div>
+                                                <div class="item px-3 text-uppercase" data-filter=".interior">Interior</div>
+                                                <div class="item px-3 text-uppercase" data-filter=".illustration">Illustration</div> -->
+                                            </div>
+                                            <div class="row sortable-container">
+                                                <ng-container *ngFor="let new of noticias">
+                                                
+                                                    <ng-container *ngIf="new.video.length; else imagenes">
+                                                        <div class="col-12 col-md-8 py-4  sortable-item" [ngClass]="new.category">
+                                                            <div class="blog-entry">
+                                                                <div class="blog-img">
+                                                                    <div class="video colorlib-video" [ngStyle]="{'background-image':'url( '+new.images+')'}">
+                                                                        <div class="overlay"></div>
+                                                                        <!-- <div class="position-absolute t-0 l-0 h-100 w-100 d-flex align-items-center justify-content-center"> -->
+                                                                        <a class="video-modal d-flex justify-content-center align-items-center" [href]="new.video">
+                                                                            <i class="fab fa-youtube fa-2x"></i>
                                                                         </a>
-                                                                        <a class="button-control py-3 px-4 ml-2" href="#demo" data-slide="next">
-                                                                            <i class="fas fa-arrow-right"></i>
-                                                                        </a>
+                                                                        <!-- </div> -->
                                                                     </div>
-                                                        
+                                                                </div>
+                                                                <div class="desc">
+                                                                    <p class="meta">
+                                                                        <span class="cat"><a href="">{{new.category}}</a></span>
+                                                                        <span class="date">{{new.date}}</span>
+                                                                        <span class="pos">By <a href="">{{new.author}}</a></span>
+                                                                    </p>
+                                                                    <h2><a href="">{{new.title}}</a></h2>
+                                                                    <p>{{new.excerpt}}</p>
                                                                 </div>
                                                             </div>
-                                                            <div class="desc">
-                                                                <p class="meta">
-                                                                    <span class="cat"><a href="">{{new.category}}</a></span>
-                                                                    <span class="date">{{new.date}}</span>
-                                                                    <span class="pos">By <a href="">{{new.author}}</a></span>
-                                                                </p>
-                                                                <h2><a href="">{{new.title}}</a></h2>
-                                                                <p>{{new.excerpt}}</p>
-                                                            </div>
                                                         </div>
-                                                    </div>
+                                                
+                                                    </ng-container>
+                                                    <ng-template #imagenes>
+                                                        <!-- SLIDER -->
+                                                        <ng-container *ngIf="new.images.length > 1;else normal">
+                                                            <div class="col-12 col-md-4 py-4  sortable-item" [ngClass]="new.category"> 
+                                                                <div class="blog-entry">
+                                                                    <div class="blog-slider">
+                                                                        <div id="demo" class="carousel slide carousel-fade" data-interval="6000" data-ride="carousel"
+                                                                            data-pause="false">
+                                                                            <!-- The slideshow -->
+                                                                            <div class="carousel-inner">
+                                                                                <div *ngFor="let image of new.images;let first=first" class="carousel-item"
+                                                                                    [ngClass]="{'active':first}">
+                                                                                    <a href="">
+                                                                                        <img [src]="image" alt="" class="img-fluid">
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                
+                                                                            <!-- Left and right controls -->
+                                                                            <div
+                                                                                class="controls position-absolute r-0 t-0 d-flex align-items-center justify-content-center">
+                                                                                <a class="button-control py-3 px-4" href="#demo" data-slide="prev">
+                                                                                    <i class="fas fa-arrow-left"></i>
+                                                                                </a>
+                                                                                <a class="button-control py-3 px-4 ml-2" href="#demo" data-slide="next">
+                                                                                    <i class="fas fa-arrow-right"></i>
+                                                                                </a>
+                                                                            </div>
+                                                
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="desc">
+                                                                        <p class="meta">
+                                                                            <span class="cat"><a href="">{{new.category}}</a></span>
+                                                                            <span class="date">{{new.date}}</span>
+                                                                            <span class="pos">By <a href="">{{new.author}}</a></span>
+                                                                        </p>
+                                                                        <h2><a href="">{{new.title}}</a></h2>
+                                                                        <p>{{new.excerpt}}</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </ng-container>
+                                                        <ng-template #normal>
+                                                            <!-- NORMAL -->
+                                                            <div class="col-12 col-md-4 py-4  sortable-item" [ngClass]="new.category">
+                                                                <div class="blog-entry">
+                                                                    <div class="blog-img">
+                                                                        <a href="">
+                                                                            <img [src]="new.images" alt="" class="img-fluid">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="desc">
+                                                                        <p class="meta">
+                                                                            <span class="cat"><a href="">{{new.category}}</a></span>
+                                                                            <span class="date">{{new.date}}</span>
+                                                                            <span class="pos">By <a href="">{{new.author}}</a></span>
+                                                                        </p>
+                                                                        <h2><a href="">{{new.title}}</a></h2>
+                                                                        <p>{{new.excerpt}}</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                
+                                                        </ng-template>
+                                                    </ng-template>
+                                                
                                                 </ng-container>
-                                                <ng-template #normal>
-                                                    <!-- NORMAL -->
-                                                    <div class="col-12 col-md-4 py-4">
-                                                        <div class="blog-entry">
-                                                            <div class="blog-img">
-                                                                <a href="">
-                                                                    <img [src]="new.images" alt="">
-                                                                </a>
-                                                            </div>
-                                                            <div class="desc">
-                                                                <p class="meta">
-                                                                    <span class="cat"><a href="">{{new.category}}</a></span>
-                                                                    <span class="date">{{new.date}}</span>
-                                                                    <span class="pos">By <a href="">{{new.author}}</a></span>
-                                                                </p>
-                                                                <h2><a href="">{{new.title}}</a></h2>
-                                                                <p>{{new.excerpt}}</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                            </div>
+
+                                        </div>
+                                       
+
                                         
-                                                </ng-template>
-                                            </ng-template>
-                                        
-                                        </ng-container>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 text-center">
@@ -723,9 +743,11 @@
             </footer>
         </div>
         <div class="col-lg-3 col-12 t-0 order-0 order-lg-1 position-absolute position-lg-relative">
-            <div class="h-lg-100vh sticky-top py-4"><span class="btn-close sticky-area"><img class="d-none d-lg-block times"
-                        src="assets/img/times.svg" width="25" alt="" /><img class="d-lg-none" src="assets/img/times-black.svg"
-                        width="18" alt="" /></span>
+            <div class="h-lg-100vh sticky-top py-4">
+                <span class="btn-close sticky-area p-1 m-1 p-lg-3 m-lg-3">
+                    <i class="fas fa-home d-lg-none"></i>
+                    <img class="d-none d-lg-block times" src="assets/img/times.svg" width="25" alt="" />
+                </span>
                 <div class="bg-holder d-flex d-sm-flex d-md-inline" style="background-image:url(https://picsum.photos/400/1003);">
                     <div class="bg-color"  [ngStyle]="{'background':'linear-gradient( rgb('+color+') 40%, rgba('+color+',.4) )'}"></div>
                     <div class="menu-mobile d-flex d-lg-none ml-5">
@@ -743,7 +765,7 @@
                 </div>
                 <h1 class="page-title">{{title}}</h1>
             </div>
-            <app-menu-mobile *ngIf="showMenuMovil" [paginas]="current"></app-menu-mobile>
+            <app-menu-mobile *ngIf="showMenuMovil" [paginas]="currentMenu"></app-menu-mobile>
         </div>
     </div>
 </div>

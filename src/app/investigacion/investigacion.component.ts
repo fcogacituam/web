@@ -16,6 +16,9 @@ export class InvestigacionComponent implements OnInit {
   hash: string;
   title:string;
   current:any;
+  currentMenu: any = {
+    "title": ''
+  };
   showMenuMovil:boolean = false;
 
   cerrarMenu(e){
@@ -29,7 +32,9 @@ export class InvestigacionComponent implements OnInit {
     this.current = page;
     this.title = page.title;
   }
-
+  setMenu(menu) {
+    this.currentMenu = menu;
+  }
   constructor() { }
 
   ngOnInit() {

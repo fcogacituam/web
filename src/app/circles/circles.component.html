@@ -34,14 +34,19 @@
     <div class="circulo-girador"
         [ngStyle]="{'transform': 'rotate(' + moveCircle.rotate + 'deg) translate('+ moveCircle.space +'px) rotate('+moveCircle.rotateReverse+'deg)'}">
     </div>
-    <div *ngFor="let carrera of datos;let index=index" class="circulo-item-container d-flex flex-column align-items-center"  [ngStyle]="{'transform': 'rotate(' + carrera.rotate + 'deg) translate('+ carrera.space +'px) rotate('+carrera.rotateReverse+'deg)'}" (click)="setActive(index)"> 
-        <div class="circulo-item" [ngClass]="{'active': carrera.active}">
-            <i class="fas fa-university fa-2x"></i>
+    <a *ngFor="let carrera of datos;let index=index" [href]="carrera.href" class="circulo-item-container d-flex flex-column align-items-center"
+            [ngStyle]="{'transform': 'rotate(' + carrera.rotate + 'deg) translate('+ carrera.space +'px) rotate('+carrera.rotateReverse+'deg)'}"
+            (mouseenter)="setActive(index)">
+        <div class="d-flex flex-column align-items-center">
+            <div class="circulo-item" [ngClass]="{'active': carrera.active}">
+                <i class="fas fa-university fa-2x"></i>
+            </div>
+            <div class="circulo-title text-center" [ngClass]="{'active': carrera.active}">
+                {{carrera.title}}
+            </div>
         </div>
-        <div class="circulo-title text-center">
-            {{carrera.title}}
-        </div>
-    </div>
+    </a>
+    
 </div>
 
 <div class="d-flex d-md-none flex-column container">

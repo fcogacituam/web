@@ -218,4 +218,7 @@ rgb(35,28,52);      AZUL OSCURO
 .circle.red{
     background:rgb(198,9,59); 
 }
+.circle.white{
+    background: #fff;
+}
 .list .list-line .hide .circle{background: #fff;color: #000;}

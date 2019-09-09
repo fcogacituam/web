@@ -12,6 +12,9 @@ export class ComunidadUohComponent implements OnInit {
   hash: string;
   title: string;
   current: any;
+  currentMenu: any = {
+    "title": ''
+  };
   showMenuMovil: boolean = false;
   
 
@@ -25,6 +28,9 @@ export class ComunidadUohComponent implements OnInit {
   setCurrent(page) {
     this.current = page;
     this.title = page.title;
+  }
+  setMenu(menu) {
+    this.currentMenu = menu;
   }
   constructor() { }
 

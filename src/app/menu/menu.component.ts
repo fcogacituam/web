@@ -10,13 +10,15 @@ export class MenuComponent implements OnInit {
 
   @Input('paginas') paginas: any;
   @Output() current= new EventEmitter();
+  @Output() menu = new EventEmitter();
 
-
-  onsetCurrentPage(page){
+  onsetCurrentPage(page,menu){
     this.current.emit(page);
+    this.menu.emit(menu);
   }
 
   currentPage:any;
+  currentMenu: any;
   hash: string = window.location.hash.substring(1);
 
   mouseEnter(e){
@@ -38,7 +40,7 @@ export class MenuComponent implements OnInit {
       let el = this.paginas[i];
       if (el.path == self.hash) {
         singlePage.push(el);
-        this.onsetCurrentPage(el);
+        this.onsetCurrentPage(el,el);
         this.currentPage = singlePage;
       }
     }
@@ -53,16 +55,17 @@ export class MenuComponent implements OnInit {
         const el = self.paginas[i];
         if(el.path == newHash){
           singlePage.push(el);
-          self.onsetCurrentPage(el);
+          self.onsetCurrentPage(el,el);
           self.currentPage = singlePage;
+          // self.currentMenu = el;
           return;
         }else{
           if (el.children) {
             for (let j = 0; j < el.children.length; j++) {
               const el2 = el.children[j];
               if(el2.path == newHash){
-                singlePage.push(el2);
-                self.onsetCurrentPage(el2);
+                singlePage.push(el);
+                self.onsetCurrentPage(el2,el);
                 self.currentPage = singlePage;
                 return;
               }else{
@@ -70,8 +73,8 @@ export class MenuComponent implements OnInit {
                   for(let k=0; k < el2.children.length; k++){
                     const el3 = el2.children[k]
                     if (el3.path == newHash) {
-                      singlePage.push(el3);
-                      self.onsetCurrentPage(el3);
+                      singlePage.push(el);
+                      self.onsetCurrentPage(el3,el);
                       self.currentPage = singlePage;
                       return;
                     }else{
@@ -79,10 +82,22 @@ export class MenuComponent implements OnInit {
                         for (let m = 0; m < el3.children.length; m++) {
                           const el4 = el3.children[m];
                           if (el4.path == newHash) {
-                            singlePage.push(el4);
-                            self.onsetCurrentPage(el4);
+                            singlePage.push(el);
+                            self.onsetCurrentPage(el4,el);
                             self.currentPage = singlePage;
                             return;
+                          }else{
+                            if (el4.children) {
+                              for (let n = 0; n < el4.children.length; n++) {
+                                const el5 = el4.children[n];
+                                if(el5.path == newHash){
+                                  singlePage.push(el);
+                                  self.onsetCurrentPage(el5, el);
+                                  self.currentPage = singlePage;
+                                  return;
+                                }
+                              }
+                            }
                           }
                         }
                       }

@@ -37,6 +37,10 @@ h1,h2,h3{
     align-items: center;
     z-index: 1000;
 }
+.arrow-down {
+  z-index: 103;
+  color: #fff;
+}
 .copyright {
     color: #fff;
     font-size: .8em;
@@ -153,7 +157,9 @@ h1,h2,h3{
   /* letter-spacing: 3px; */
      
 }
-
+.btn-close svg{
+  color: rgb(0,117,201)!important;
+}
 
 @keyframes zoomImg{
     from {
@@ -277,6 +283,10 @@ footer{
 @media (max-width: 992px) { 
   .accesibilidad{
     right: 4%;
+  }
+  .bg-color{
+    /* background: rgb(35,28,52)!important;   */
+    background:linear-gradient( rgb(35,28,52) 40%, rgba(35,28,52,.8))!important;
   }
 }
 

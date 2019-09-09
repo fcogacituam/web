@@ -12,11 +12,15 @@ export class VinculacionComponent implements OnInit {
   hash: string;
   title: string;
   current: any;
+  currentMenu: any = {
+    "title": ''
+  };
   showMenuMovil: boolean = false;
 
   cerrarMenu(e) {
     this.showMenuMovil = false;
   }
+
 
   openMenuMovil(e) {
     this.showMenuMovil = true;
@@ -24,6 +28,9 @@ export class VinculacionComponent implements OnInit {
   setCurrent(page) {
     this.current = page;
     this.title = page.title;
+  }
+  setMenu(menu) {
+    this.currentMenu = menu;
   }
   constructor() { }
 
