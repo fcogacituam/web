@@ -7,6 +7,7 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class UniversidadComponent implements OnInit {
   @Input() paginas: any;
+  @Input() profiles: any;
   @Input() color:string;
 
   hash: string;
@@ -15,8 +16,9 @@ export class UniversidadComponent implements OnInit {
   currentMenu: any = {
     "title": ''
   };
-  showMenuMovil: boolean = false;
 
+  showMenuMovil: boolean = false;
+ 
   cerrarMenu(e) {
     this.showMenuMovil = false;
   }

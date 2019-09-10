@@ -7,9 +7,19 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class DefaultComponent implements OnInit {
   @Input() paginas: any;
+  @Input() profiles: any;
   @Input() color: string;
   hash: string;
   title: string;
+
+  profilePage:boolean= false;
+  currentProfile:any;
+  setProfileTrue(e) {
+    this.profilePage = true;
+  }
+
+
+
   current: any ={
     "title":''
   };
@@ -26,6 +36,7 @@ export class DefaultComponent implements OnInit {
     this.showMenuMovil = true;
   }
 
+
   setCurrent(page) {
     this.current = page;
     this.title = page.title;
@@ -33,9 +44,32 @@ export class DefaultComponent implements OnInit {
   setMenu(menu){
     this.currentMenu = menu;
   }
-  constructor() { }
+
+
+  constructor() {
+
+  }
 
   ngOnInit() {
+    let self=this;
+    $(window).on('hashchange', function () {
+      let newHash = window.location.hash.substring(1);
+      console.log("LO CAPTURO DE AQUI",newHash);
+      if(isProfile(newHash)){
+        self.setProfileTrue(newHash);
+      }
+    });
+
+    function isProfile(hash){
+      for (let i = 0; i < self.profiles.length; i++) {
+        const element = self.profiles[i];
+        if(element.page.path.substr(1) == hash){
+          self.currentProfile = element;
+          return true;
+        }
+      }
+      
+    }
   }
 
 }
