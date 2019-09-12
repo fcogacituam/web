@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit {
 
   currentPage:any;
   currentMenu: any;
-  hash: string = window.location.hash.substring(1);
+  hash: string = window.location.hash;
 
   mouseEnter(e){
     let height:number = $(e.target.parentNode).height();
@@ -49,7 +49,7 @@ export class MenuComponent implements OnInit {
     $(window).on('hashchange',function(){
       self.currentPage = [];
       singlePage= [];
-      let newHash= window.location.hash.substring(1);
+      let newHash= window.location.hash;
 
       for (let i = 0; i < self.paginas.length; i++) {
         const el = self.paginas[i];

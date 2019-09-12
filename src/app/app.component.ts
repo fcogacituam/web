@@ -397,7 +397,7 @@ export class AppComponent implements OnInit{
       "description": null,
       "position": 1,
       "parent": 0,
-      "path": "universidad",
+      "path": "#universidad",
       "status": 1,
       "created_at": "2017-09-05T18:44:20.000-03:00",
       "updated_at": "2018-10-30T12:36:34.000-03:00",
@@ -409,7 +409,7 @@ export class AppComponent implements OnInit{
           "description": null,
           "position": 1,
           "parent": 1,
-          "path": "organizacion",
+          "path": "#organizacion",
           "status": 1,
           "created_at": "2017-09-06T15:59:49.000-03:00",
           "updated_at": "2017-11-17T19:44:24.000-03:00",
@@ -421,7 +421,7 @@ export class AppComponent implements OnInit{
               "description": null,
               "position": 1,
               "parent": 1,
-              "path": "rectoria",
+              "path": "#rectoria",
               "status": 1,
               "children":[
                 {
@@ -431,7 +431,7 @@ export class AppComponent implements OnInit{
                   "description": null,
                   "position": 1,
                   "parent": 1,
-                  "path": "vicerrectorias",
+                  "path": "#vicerrectorias",
                   "status": 1,
                   "children":[
                     {
@@ -441,7 +441,7 @@ export class AppComponent implements OnInit{
                       "description": null,
                       "position": 1,
                       "parent": 1,
-                      "path": "direcciones",
+                      "path": "#direcciones",
                       "status": 1,
                     }
                   ]
@@ -453,7 +453,7 @@ export class AppComponent implements OnInit{
                   "description": null,
                   "position": 1,
                   "parent": 1,
-                  "path": "contraloria-interna",
+                  "path": "#contraloria-interna",
                   "status": 1,
                 },
                 {
@@ -463,7 +463,7 @@ export class AppComponent implements OnInit{
                   "description": null,
                   "position": 1,
                   "parent": 1,
-                  "path": "otras-direcciones",
+                  "path": "#otras-direcciones",
                   "status": 1,
                 },
               ]
@@ -475,7 +475,7 @@ export class AppComponent implements OnInit{
               "description": null,
               "position": 1,
               "parent": 1,
-              "path": "consejo-superior",
+              "path": "#consejo-superior",
               "status": 1,
             },
             {
@@ -485,7 +485,7 @@ export class AppComponent implements OnInit{
               "description": null,
               "position": 1,
               "parent": 1,
-              "path": "consejo-academico",
+              "path": "#consejo-academico",
               "status": 1,
             },
             {
@@ -495,7 +495,7 @@ export class AppComponent implements OnInit{
               "description": null,
               "position": 1,
               "parent": 1,
-              "path": "consejo-academico",
+              "path": "#consejo-academico",
               "status": 1,
             },
             {
@@ -505,7 +505,7 @@ export class AppComponent implements OnInit{
               "description": null,
               "position": 1,
               "parent": 1,
-              "path": "consejo-academico",
+              "path": "#consejo-academico",
               "status": 1,
             }
           ]
@@ -517,7 +517,7 @@ export class AppComponent implements OnInit{
           "description": null,
           "position": 1,
           "parent": 1,
-          "path": "directorio",
+          "path": "#directorio",
           "status": 1,
           "created_at": "2017-09-06T15:59:49.000-03:00",
           "updated_at": "2017-11-17T19:44:24.000-03:00",
@@ -529,7 +529,7 @@ export class AppComponent implements OnInit{
               "description": null,
               "position": 1,
               "parent": 1,
-              "path": "prueba6",
+              "path": "#prueba6",
               "status": 1,
             }
           ]
@@ -543,7 +543,7 @@ export class AppComponent implements OnInit{
       "description": null,
       "position": 1,
       "parent": 0,
-      "path": "investigacion",
+      "path": "#investigacion",
       "status": 1,
       "created_at": "2017-09-05T18:44:20.000-03:00",
       "updated_at": "2018-10-30T12:36:34.000-03:00",
@@ -555,7 +555,7 @@ export class AppComponent implements OnInit{
           "description": null,
           "position": 1,
           "parent": 0,
-          "path": "institutos",
+          "path": "#institutos",
           "status": 1,
           "children":[
             {
@@ -565,7 +565,7 @@ export class AppComponent implements OnInit{
               "description": null,
               "position": 1,
               "parent": 0,
-              "path": "proyectos",
+              "path": "#proyectos",
               "status": 1,
             },
             {
@@ -575,7 +575,7 @@ export class AppComponent implements OnInit{
               "description": null,
               "position": 1,
               "parent": 0,
-              "path": "academicos",
+              "path": "#academicos",
               "status": 1,
             },
             {
@@ -585,7 +585,7 @@ export class AppComponent implements OnInit{
               "description": null,
               "position": 1,
               "parent": 0,
-              "path": "otros-investigadores",
+              "path": "#otros-investigadores",
               "status": 1,
             },
           ]
@@ -599,7 +599,7 @@ export class AppComponent implements OnInit{
       "description": null,
       "position": 1,
       "parent": 0,
-      "path": "comunidad-uoh",
+      "path": "#comunidad-uoh",
       "status": 1,
       "created_at": "2017-09-05T18:44:20.000-03:00",
       "updated_at": "2018-10-30T12:36:34.000-03:00",
@@ -611,7 +611,7 @@ export class AppComponent implements OnInit{
           "description": null,
           "position": 1,
           "parent": 0,
-          "path": "ucampus",
+          "path": "#ucampus",
           "status": 1,
         },
         {
@@ -621,7 +621,7 @@ export class AppComponent implements OnInit{
           "description": null,
           "position": 1,
           "parent": 0,
-          "path": "biblioteca",
+          "path": "#biblioteca",
           "status": 1,
         },
         {
@@ -631,7 +631,7 @@ export class AppComponent implements OnInit{
           "description": null,
           "position": 1,
           "parent": 0,
-          "path": "beneficios",
+          "path": "#beneficios",
           "status": 1,
         },
         {
@@ -641,7 +641,7 @@ export class AppComponent implements OnInit{
           "description": null,
           "position": 1,
           "parent": 0,
-          "path": "deportes",
+          "path": "#deportes",
           "status": 1,
         },
         {
@@ -651,7 +651,7 @@ export class AppComponent implements OnInit{
           "description": null,
           "position": 1,
           "parent": 0,
-          "path": "centro-de-ensenanza-y-aprendizaje",
+          "path": "#centro-de-ensenanza-y-aprendizaje",
           "status": 1,
         },
         {
@@ -661,7 +661,7 @@ export class AppComponent implements OnInit{
           "description": null,
           "position": 1,
           "parent": 0,
-          "path": "bienestar-del-personal",
+          "path": "#bienestar-del-personal",
           "status": 1,
         },
         {
@@ -671,7 +671,7 @@ export class AppComponent implements OnInit{
           "description": null,
           "position": 1,
           "parent": 0,
-          "path": "gestion-de-personas",
+          "path": "#gestion-de-personas",
           "status": 1,
         },
       ]
@@ -683,7 +683,7 @@ export class AppComponent implements OnInit{
       "description": null,
       "position": 1,
       "parent": 0,
-      "path": "admision",
+      "path": "#admision",
       "status": 1,
       "created_at": "2017-09-05T18:44:20.000-03:00",
       "updated_at": "2018-10-30T12:36:34.000-03:00",
@@ -695,7 +695,7 @@ export class AppComponent implements OnInit{
           "description": null,
           "position": 1,
           "parent": 0,
-          "path": "carreras",
+          "path": "#carreras",
           "status": 1,
         },
         {
@@ -705,7 +705,7 @@ export class AppComponent implements OnInit{
           "description": null,
           "position": 1,
           "parent": 0,
-          "path": "vias-de-ingreso",
+          "path": "#vias-de-ingreso",
           "status": 1,
         }
       ]
@@ -717,7 +717,7 @@ export class AppComponent implements OnInit{
       "description": null,
       "position": 1,
       "parent": 0,
-      "path": "vinculacion",
+      "path": "#vinculacion",
       "status": 1,
       "created_at": "2017-09-05T18:44:20.000-03:00",
       "updated_at": "2018-10-30T12:36:34.000-03:00",
@@ -729,7 +729,7 @@ export class AppComponent implements OnInit{
           "description": null,
           "position": 1,
           "parent": 0,
-          "path": "par-explora",
+          "path": "#par-explora",
           "status": 1,
         },
         {
@@ -739,7 +739,7 @@ export class AppComponent implements OnInit{
           "description": null,
           "position": 1,
           "parent": 0,
-          "path": "icec",
+          "path": "#icec",
           "status": 1,
         },
         {
@@ -749,7 +749,7 @@ export class AppComponent implements OnInit{
           "description": null,
           "position": 1,
           "parent": 0,
-          "path": "arte-y-cultura",
+          "path": "#arte-y-cultura",
           "status": 1,
         },
         {
@@ -759,7 +759,7 @@ export class AppComponent implements OnInit{
           "description": null,
           "position": 1,
           "parent": 0,
-          "path": "iaea",
+          "path": "#iaea",
           "status": 1,
         },
       ]
@@ -771,7 +771,7 @@ export class AppComponent implements OnInit{
       "description": null,
       "position": 1,
       "parent": 0,
-      "path": "noticias-y-eventos",
+      "path": "#noticias-y-eventos",
       "status": 1,
       "created_at": "2017-09-05T18:44:20.000-03:00",
       "updated_at": "2018-10-30T12:36:34.000-03:00",

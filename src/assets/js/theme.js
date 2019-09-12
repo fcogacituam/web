@@ -1480,12 +1480,12 @@ spUtils.$document.ready(function () {
     });
     if (content) {
       $(Selector.PAGE).fadeOut('1000');
-      $("#" + content).fadeIn('1000');
+      $(content).fadeIn('1000');
       $(Selector.CLOSEBUTTON).fadeIn('slow');
       $(".foot").addClass("hideFoot");
       switch (content) {
-        case 'admision':
-        case 'noticias-y-eventos':
+        case '#admision':
+        case '#noticias-y-eventos':
           $(Selector.SORTABLEMENU).find(Selector.ACTIVE).removeClass('active');
           $(Selector.SORTABLEMENU).find(Selector.ITEM).first().addClass('active');
           setTimeout(function () {
@@ -1512,7 +1512,7 @@ spUtils.$document.ready(function () {
         if (spUtils.$window.width() < breakPoint) {
           homePage.css('display', 'none');
 
-          if ($.inArray(window.location.hash.substr(1), pages) > -1) {
+          if ($.inArray(window.location.hash, pages) > -1) {
             $(window).scrollTop(0);
           }
         }
@@ -1561,12 +1561,12 @@ spUtils.$document.ready(function () {
     var hash = window.location.hash;
     var pageId;
 
-    if (document.getElementById(hash.substr(1))) {
+    if (document.getElementById(hash)) {
       pageId = $(hash).closest('.page').attr('id');
     }
     
-    if ($.inArray(hash.substr(1), pages) > -1) {
-      goToPage(hash.substr(1));
+    if ($.inArray(hash, pages) > -1) {
+      goToPage(hash);
     } else if ($.inArray(pageId, pages) > -1) {
       goToPage(pageId);
     } else {
@@ -1593,8 +1593,8 @@ spUtils.$document.ready(function () {
     if ($this.closest(Selector.SIDEBAR_ITEM_WRAPPER).data(DataKey.CONTENT)) {
       content = $this.closest(Selector.SIDEBAR_ITEM_WRAPPER).data(DataKey.CONTENT);
       console.log("content",content)
-      if(! $("#"+content).length){
-        $(".default-page").attr('id',content);
+      if(! $(content).length){
+        $(".default-page").attr('id',content.substr(1));
       }
 
         window.location.hash = content;
@@ -1629,24 +1629,24 @@ spUtils.$document.ready(function () {
     // });
 
     var url = window.location.href;
-    var hash = window.location.hash.substr(1);
+    var hash = window.location.hash;
     var pageId
     console.log("url", url)
     console.log("hash", hash)
-    if (document.getElementById(hash.substr(1))) {
+    if (document.getElementById(hash)) {
       pageId = $(hash).closest('.page').attr('id');
       
     }
 
     var currentPage = $('.page:visible').attr('id');
 
-    if ($.inArray(window.location.hash.substr(1), pages) > -1) {
-      if (!$("#" + hash).length) {
+    if ($.inArray(window.location.hash, pages) > -1) {
+      if (!$(hash).length) {
         $(".default-page").attr('id', hash);
       }else{
       }
       window.location.hash = hash;
-      goToPage(window.location.hash.substr(1));
+      goToPage(window.location.hash);
     } else if ($.inArray(pageId, pages) > -1) {
       if (currentPage !== pageId) {
         goToPage(pageId);

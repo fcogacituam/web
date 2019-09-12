@@ -53,7 +53,7 @@ export class DefaultComponent implements OnInit {
   ngOnInit() {
     let self=this;
     $(window).on('hashchange', function () {
-      let newHash = window.location.hash.substring(1);
+      let newHash = window.location.hash;
       console.log("LO CAPTURO DE AQUI",newHash);
       if(isProfile(newHash)){
         self.setProfileTrue(newHash);
@@ -63,7 +63,8 @@ export class DefaultComponent implements OnInit {
     function isProfile(hash){
       for (let i = 0; i < self.profiles.length; i++) {
         const element = self.profiles[i];
-        if(element.page.path.substr(1) == hash){
+        console.log("Hash",hash);
+        if(element.page.path == hash){
           self.currentProfile = element;
           return true;
         }
