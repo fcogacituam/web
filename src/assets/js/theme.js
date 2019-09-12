@@ -1486,6 +1486,8 @@ spUtils.$document.ready(function () {
       switch (content) {
         case '#admision':
         case '#noticias-y-eventos':
+        case '#universidad':
+        case '#vinculacion':
           $(Selector.SORTABLEMENU).find(Selector.ACTIVE).removeClass('active');
           $(Selector.SORTABLEMENU).find(Selector.ITEM).first().addClass('active');
           setTimeout(function () {

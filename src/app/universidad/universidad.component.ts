@@ -13,6 +13,9 @@ export class UniversidadComponent implements OnInit {
   hash: string;
   title: string;
   current:any;
+
+
+  profileCategories:any;
   currentMenu: any = {
     "title": ''
   };
@@ -37,7 +40,16 @@ export class UniversidadComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+    let aux: any = [];
+    let self = this;
+    console.log("profiles",this.profiles);
+    for (let i = 0; i < this.profiles.length; i++) {
+      const el = this.profiles[i];
+      if ($.inArray(el.page.description, aux) === -1) {
+        aux.push(el.page.description);
+      }
+    }
+    this.profileCategories = aux;
   }
 
 }

@@ -1,0 +1,192 @@
+<!-- <h2 class="fs-2 fs-sm-3"> {{currentProfile.page.title}}</h2> -->
+<hr class="hr-ornate" />
+<div *ngIf="true" id="v-card-holder" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                <!-- V-CARD -->
+                <div id="v-card" class="card">
+
+                    <!-- PROFILE PICTURE -->
+                    <div id="profile" class="right">
+                        <img alt="profile-image" class="img-responsive img-fluid" [src]="currentProfile.image.src">
+                        <div class="slant"></div>
+
+                        <!--EMPTY PLUS BUTTON-->
+                        <!-- <div class="btn-floating btn-large add-btn"><i class="material-icons">add</i></div> -->
+
+                        <!--VIDEO PLAY BUTTON-->
+                        <div id="button-holder" class="btn-holder">
+                            <div id="play-btn" class="btn-floating btn-large btn-play">
+                                <span class="fa-stack fa-2x">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fas fa-play fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--VIDEO CLOSE BUTTON-->
+                    <!-- <div id="close-btn" class="btn-floating icon-close">
+                        <i class="fa fa-close"></i>
+                    </div> -->
+
+                    <div class="card-content text-left w-50 d-flex flex-column justify-content-center">
+
+                        <!-- NAME & STATUS -->
+                        <div class="info-headings mb-2">
+                            <h3 class="text-uppercase text-left py-2 m-0">{{currentProfile.page.title}}</h3>
+                            <h5 class="text-capitalize text-left">{{currentProfile.page.description}}</h5>
+                        </div>
+
+                        <!-- CONTACT INFO -->
+                        <div class="infos">
+                            <div class="profile-list p-0 m-0 d-flex flex-column">
+                                <div class="d-flex flex-row">
+                                    <i class="fas fa-envelope-open"></i>
+                                    <span class="pl-2">email@mailprovider.com</span>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <i class="fas fa-globe"></i>
+                                    <span class="pl-2">yourpersonalwebsite.com</span>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <i class="fas fa-phone"></i>
+                                    <span class="pl-2">+152 25634 254 846</span>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span class="pl-2">LampStreet 34/3, London, UK</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <!--LINKS-->
+                        <div class="links my-3 d-flex">
+                            <div class="link mr-2">
+                                <span class="fa-stack">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </div>
+                            <div class="link mr-2">
+                                <span class="fa-stack">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </div>
+                            <div class="link mr-2">
+                                <span class="fa-stack">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-google-plus-square fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </div>
+                            <div class="link mr-2">
+                                <span class="fa-stack">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </div>
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+                    <!--HTML 5 VIDEO-->
+                    <!-- <video id="html-video" class="video" poster="images/poster/poster.jpg" controls>
+                                                        
+                                                        <source src="videos/b.webm" type="video/webm">
+                                                        <source src="videos/a.mp4" type="video/mp4">
+                                                    </video> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="about" class="section my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- DETAILS -->
+                <div id="about-card" class="card">
+                    <div class="card-content">
+                        <!-- ABOUT PARAGRAPH -->
+                        <p>
+                            Hello! I’m John Doe. Senior Web Developer with over 13 years of experience
+                            specializing in front end development. Experienced with all stages of the
+                            development cycle for dynamic web projects.Having an in-depth knowledge
+                            including advanced HTML5, CSS, CSS3, SASS, LESS, JSON, XML, Java, JavaScript,
+                            JQuery, Angular JS. Strong background in management and leadership.
+                        </p>
+                    </div>
+
+                    <!-- BUTTONS -->
+                    <div id="about-btn" class="card-action">
+                        <div class="about-btn">
+                            <!-- DOWNLOAD CV BUTTON -->
+                            <a href="#" class="btn">Download CV</a>
+                            <!-- CONTACT BUTTON -->
+                            <a href="#contact" class="btn">Contact Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+
+
+        <!-- Modal -->
+        <div class="modal fade" *ngFor="let education of currentProfile.academic_profiles" [attr.id]="'profileModal_'+education.id" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">{{education.job_title}}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        {{education.biography}}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-12">
+            <div class="section-title my-4">
+                <h2 class="text-uppercase text-center">Education</h2>
+            </div>
+            <div class="main-timeline">
+
+                <a class="timeline" *ngFor="let education of currentProfile.academic_profiles">
+                    <div class="timeline-icon d-flex align-items-center justify-content-center">
+                        <i class="fa fa-globe fa-2x"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3 class="title">{{education.job_title}}</h3>
+                        <p class="description">
+                            {{education.academic_degree}}
+                           
+                        </p>
+                        <a data-toggle="modal" class="position-relative" [attr.data-target]="'#profileModal_'+education.id">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </a>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

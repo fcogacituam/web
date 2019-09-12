@@ -100,16 +100,41 @@
                                 <hr class="hr-ornate" />
                             </div>
                             <div class="row">
-                                <div *ngFor="let profile of profiles" class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3 mb-5">
-                                    <img class="img-fluid rounded-circle" [src]="profile.image.src" width="140" alt="" />
-                                    <h5 class="mt-3 mb-1">
-                                        <a class="menu-action-trigger" [attr.data-content]="profile.page.path">
-                                            {{profile.page.title}}
-                                        </a>
-                                    </h5>
-                                    <h5 class="text-500 mb-1">{{profile.page.description}}</h5>
+                                <div class="sortable w-100 perfiles" data-options='{"layoutMode":"packery"}'>
+                                    <div class="menu justify-content-center mb-5">
+                                        <div class="item px-3 text-uppercase active" data-filter="*">All</div>
+                                        <div *ngFor="let item of profileCategories" class="item px-3 text-uppercase" [attr.data-filter]="'.'+item">
+                                            {{item}}
+                                        </div>
+                                    </div>
+                                    <div class="row sortable-container">
+                                        <ng-container  *ngFor="let profile of profiles">
+                                            <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3 mb-5 sortable-item perfil" [ngClass]="profile.page.description">
+                                                <img class="img-fluid rounded-circle" [src]="profile.image.src" width="140" alt="" />
+                                                <h5 class="mt-3 mb-1">
+                                                    <a class="menu-action-trigger" [attr.data-content]="profile.page.path">
+                                                        {{profile.page.title}}
+                                                    </a>
+                                                </h5>
+                                                <h5 class="text-500 mb-1">{{profile.page.description}}</h5>
+                                            </div>
+                                        </ng-container>
+                                    </div>
                                 </div>
+                                
                                
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <ul class="pagination d-flex justify-content-center">
+                                        <li class="disabled"><a href="#">&laquo;</a></li>
+                                        <li class="active"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">&raquo;</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
