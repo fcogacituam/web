@@ -15,7 +15,7 @@
                         <div class="col-lg-10">
                             <div class="mb-5 mb-lg-6">
                                 
-                                <ng-container *ngIf="profilePage">
+                                <ng-container *ngIf="profilePage;else default">
                                     <h2 class="fs-2 fs-sm-3"> {{currentProfile.page.title}}</h2>
                                     <hr class="hr-ornate" />
                                     <div *ngIf="true" id="v-card-holder" class="section">
@@ -257,7 +257,6 @@
                                         </div>
                                     </div>
                                 </ng-container>
-                               
 
 
 

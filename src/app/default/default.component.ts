@@ -17,6 +17,9 @@ export class DefaultComponent implements OnInit {
   setProfileTrue(e) {
     this.profilePage = true;
   }
+  unsetProfile(e) {
+    this.profilePage = false;
+  }
 
 
 
@@ -57,18 +60,22 @@ export class DefaultComponent implements OnInit {
       console.log("LO CAPTURO DE AQUI",newHash);
       if(isProfile(newHash)){
         self.setProfileTrue(newHash);
+      }else{
+        self.unsetProfile(newHash);
       }
     });
 
     function isProfile(hash){
       for (let i = 0; i < self.profiles.length; i++) {
         const element = self.profiles[i];
-        console.log("Hash",hash);
+        console.log("Hash a revisar",hash);
         if(element.page.path == hash){
+          console.log(element);
           self.currentProfile = element;
           return true;
         }
       }
+      return false;
       
     }
   }
