@@ -6,7 +6,7 @@
         </div>
         
         <div *ngFor="let pagina of currentPage" class="flex-grow-1 d-flex justify-content-center" >
-            <div *ngFor="let pag of pagina.children" class="pagina d-flex justify-content-center" [ngClass]="{'active': pag.path === hash}" (mouseenter) ="mouseEnter($event)" (mouseleave) ="mouseLeave($event)">
+            <div *ngFor="let pag of pagina.children" class="pagina d-flex justify-content-center" (click)="holdHover($event)" [ngClass]="{'active': pag.path === hash}" (mouseenter) ="mouseEnter($event)" (mouseleave) ="mouseLeave($event)">
                 <a class="menu-action-trigger main-title px-3" [attr.data-content]="pag.path">
                     <!-- <div class="linea line-left"></div> -->
                     {{pag.title}}

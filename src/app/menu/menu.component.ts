@@ -21,13 +21,59 @@ export class MenuComponent implements OnInit {
   currentMenu: any;
   hash: string = window.location.hash;
 
+  clicked:boolean=false;
+  currentHold:any;
+
+  holdHover(e){
+    this.clicked=true;
+    if (e.target.lastChild != this.currentHold) {
+      console.log("cambiar de activo")
+      
+      if (this.currentHold == "" || this.currentHold ==null){
+        this.currentHold = e.target.lastChild;
+        let height: number = $(e.target.parentNode).height();
+        $(e.target.lastChild).css("margin-top", height - 2 + 'px');
+        $(e.target.lastChild).addClass("hovered animated slideInLeft");
+
+      }else{
+        $(".container-submenu").each(function (el) {
+          $(this).removeClass("hovered animated slideInLeft");
+        })
+        this.currentHold = e.target.lastChild;
+        let height: number = $(e.target.parentNode).height();
+        $(e.target.lastChild).css("margin-top", height - 2 + 'px');
+        $(e.target.lastChild).addClass("hovered animated slideInLeft");
+
+
+      }
+      
+      
+
+    }
+  }
   mouseEnter(e){
-    let height:number = $(e.target.parentNode).height();
-    $(e.target.lastChild).css("margin-top", height - 2 + 'px');
-    $(e.target.lastChild).addClass("hovered animated slideInLeft");
+    let height: number = $(e.target.parentNode).height();
+    if (this.clicked) {
+      if (e.target.lastChild == this.currentHold) {
+        $(e.target.lastChild).css("margin-top", height - 2 + 'px');
+        $(e.target.lastChild).addClass("hovered");
+      }else{
+
+      }
+      
+    }else{
+      
+      $(e.target.lastChild).css("margin-top", height - 2 + 'px');
+      $(e.target.lastChild).addClass("hovered animated slideInLeft");
+
+    }
   }
   mouseLeave(e){
-    $(e.target.lastChild).removeClass("hovered animated slideInLeft");
+    if (this.clicked) {
+      
+    }else{
+      $(e.target.lastChild).removeClass("hovered animated slideInLeft");
+    }
   }
 
   constructor() { }
@@ -44,6 +90,23 @@ export class MenuComponent implements OnInit {
         this.currentPage = singlePage;
       }
     }
+
+    //Mantener Menú al ahcer click
+    $(document).ready(function(){
+      $(document).on('click', function (e) {
+        if (self.clicked) {
+          if ($(e.target).closest(".pagina").length === 0 ) {
+            $(".container-submenu").removeClass("hovered animated slideInLeft");
+            self.clicked=false;
+          }
+        }
+        
+      });
+    })
+
+
+
+
 
     
     $(window).on('hashchange',function(){
@@ -109,25 +172,7 @@ export class MenuComponent implements OnInit {
           }
         }
       }
-      // for (let i = 0; i < self.paginas.length; i++) {
-      //   let el = self.paginas[i];
-      //   if (el.path == newHash) {
-      //     console.log("current",el);
-      //     singlePage.push(el);
-      //     self.onsetCurrentPage(el);
-      //     self.currentPage = singlePage;
-      //   }else{
-      //     if (el.children) {
-      //       for (let j = 0; j < el.children.length; j++) {
-      //         const element = el.children[j];
-      //         this.console.log("ELEMENTO",element);
-      //         if(element.path == newHash){
-      //           this.console.log("ENCONTREEEEEE",element);
-      //         }
-      //       }
-      //     }
-      //   }
-      // }
+
     });
 
     
