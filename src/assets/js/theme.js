@@ -1268,13 +1268,13 @@ $.holdReady(true);
 $($('main')).imagesLoaded().always(function () {
   $.holdReady(false);
 });
-spUtils.$document.ready(function () {
-  var $preloader = $('#preloader');
-  $preloader.addClass('loaded');
-  setTimeout(function () {
-    $preloader.remove();
-  }, 800);
-});
+// spUtils.$document.ready(function () {
+//   var $preloader = $('#preloader');
+//   $preloader.addClass('loaded');
+//   setTimeout(function () {
+//     $preloader.remove();
+//   }, 2000);
+// });
 /*-----------------------------------------------
 |   Rellax [Parallax]
 -----------------------------------------------*/
@@ -1389,6 +1389,7 @@ spUtils.$document.ready(function () {
   var WindowLocation = window.location;
   var WindowHistory = window.history;
   var pages = [];
+  var profiles = [];
   var isInHome;
   var clickEvent = spDetector.isIOS ? 'tap' : 'click';
   var breakPoint;
@@ -1456,14 +1457,26 @@ spUtils.$document.ready(function () {
   //   }, 500)
   // })
   $(document).ready(function () {
+    $(Selector.SIDEBAR_ITEM_WRAPPER).each(function (item, value) {
+      var $this = $(value);
+      pages.push($this.data(DataKey.CONTENT));
+
+    }); //
+    $(".menu-action-trigger.profile").each(function(item,value){
+      var $this = $(value);
+      profiles.push($this.data(DataKey.CONTENT));
+    })
     setTimeout(function () {
-      $(Selector.SIDEBAR_ITEM_WRAPPER).each(function (item, value) {
-        var $this = $(value);
-        pages.push($this.data(DataKey.CONTENT));
-       
-      }); //
-      console.log(pages);
-    }, 500)
+      load();
+      spUtils.$document.ready(function () {
+        var $preloader = $('#preloader');
+        $preloader.addClass('loaded');
+        setTimeout(function () {
+          $preloader.remove();
+        }, 200);
+      });
+      
+    }, 1000)
   })
 
 
@@ -1478,11 +1491,10 @@ spUtils.$document.ready(function () {
     gridNav.css({
       right: position
     });
+    console.log("me vine para acaa",content)
+    
     if (content) {
-      $(Selector.PAGE).fadeOut('1000');
-      $(content).fadeIn('1000');
-      $(Selector.CLOSEBUTTON).fadeIn('slow');
-      $(".foot").addClass("hideFoot");
+     
       switch (content) {
         case '#admision':
         case '#noticias-y-eventos':
@@ -1507,13 +1519,19 @@ spUtils.$document.ready(function () {
           break;
 
         default:
+          if ($.inArray(window.location.hash, profiles) > -1) {
+            $(".default-page").attr('id', content.substr(1));
+          }
           break;
       }
-      
+      $(Selector.PAGE).fadeOut('1000');
+      $(content).fadeIn('1000');
+      $(Selector.CLOSEBUTTON).fadeIn('slow');
+      $(".foot").addClass("hideFoot");
+
       setTimeout(function () {
         if (spUtils.$window.width() < breakPoint) {
           homePage.css('display', 'none');
-
           if ($.inArray(window.location.hash, pages) > -1) {
             $(window).scrollTop(0);
           }
@@ -1562,17 +1580,19 @@ spUtils.$document.ready(function () {
   var load = function load() {
     var hash = window.location.hash;
     var pageId;
-
     if (document.getElementById(hash)) {
       pageId = $(hash).closest('.page').attr('id');
     }
     
     if ($.inArray(hash, pages) > -1) {
+      console.log("encontre el hash")
       goToPage(hash);
     } else if ($.inArray(pageId, pages) > -1) {
+      console.log("ELSE IF")
       goToPage(pageId);
     } else {
-      home();
+      console.log("ELSE")
+      // home();
       WindowLocation.replace('#');
       var newUrl = WindowLocation.href;
       newUrl.lastIndexOf('#') > -1 && (newUrl = newUrl.slice(0, -1));
@@ -1582,21 +1602,22 @@ spUtils.$document.ready(function () {
   // ─── LOAD ───────────────────────────────────────────────────────────────────────
   //
 
-
-  load(); //
+  // $(document).ready(function(){
+  //   load(); 
+  // })
+  //
   // ─── CLICK EVENT FOR NAVIGATION ─────────────────────────────────────────────────
   //
 
   spUtils.$document.on(clickEvent, Selector.SIDEBAR_ITEM_WRAPPER, function (e) {
     var $this = $(e.target);
     var content = '';
-    $(".default-page").removeAttr('id');
+    // $(".default-page").removeAttr('id');
 
     if ($this.closest(Selector.SIDEBAR_ITEM_WRAPPER).data(DataKey.CONTENT)) {
       content = $this.closest(Selector.SIDEBAR_ITEM_WRAPPER).data(DataKey.CONTENT);
-      console.log("content",content)
       if(! $(content).length){
-        $(".default-page").attr('id',content.substr(1));
+        // $(".default-page").attr('id',content.substr(1));
       }
 
         window.location.hash = content;
@@ -1612,29 +1633,16 @@ spUtils.$document.ready(function () {
     var newUrl = WindowLocation.href;
     newUrl.lastIndexOf('#') > -1 && (newUrl = newUrl.slice(0, -1));
     WindowHistory.replaceState({}, '', newUrl);
-    home();
+    // home();
   }); //
   // ─── LOAD PAGE ON HASH CHANGE ───────────────────────────────────────────────────
   //
 
   window.onhashchange = function () {
     
-    // $(Selector.SIDEBAR_ITEM_WRAPPER).each(function (item, value) {
-    //   var $this = $(value);
-    //   var found = jQuery.inArray($this.data(DataKey.CONTENT),pages);
-    //   if (found >=0) {
-        
-    //   }else{
-    //     pages.push($this.data(DataKey.CONTENT));
-
-    //   }
-    // });
-
     var url = window.location.href;
     var hash = window.location.hash;
     var pageId
-    console.log("url", url)
-    console.log("hash", hash)
     if (document.getElementById(hash)) {
       pageId = $(hash).closest('.page').attr('id');
       
@@ -1643,12 +1651,14 @@ spUtils.$document.ready(function () {
     var currentPage = $('.page:visible').attr('id');
 
     if ($.inArray(window.location.hash, pages) > -1) {
-      if (!$(hash).length) {
+      if ($.inArray(window.location.hash, profiles) > -1) {
         $(".default-page").attr('id', hash);
-      }else{
       }
       window.location.hash = hash;
       goToPage(window.location.hash);
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top - 30
+      }, 100);
     } else if ($.inArray(pageId, pages) > -1) {
       if (currentPage !== pageId) {
         goToPage(pageId);

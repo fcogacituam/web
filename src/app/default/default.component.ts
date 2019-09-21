@@ -55,6 +55,13 @@ export class DefaultComponent implements OnInit {
 
   ngOnInit() {
     let self=this;
+    let newHash = window.location.hash;
+    if (isProfile(newHash)) {
+      self.setProfileTrue(newHash);
+    } else {
+      self.unsetProfile(newHash);
+    }
+
     $(window).on('hashchange', function () {
       let newHash = window.location.hash;
       console.log("LO CAPTURO DE AQUI",newHash);
