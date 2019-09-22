@@ -779,6 +779,20 @@ export class AppComponent implements OnInit{
   ]
   constructor(){}
   ngOnInit(): void {
+    $(document).ready(function(){
+      $(".trigger-slide").click(function(e){
+        e.preventDefault();
+        var scrollTo = $(".foot").offset().top;
+        // $(window).scrollTop($(".foot").offset().top);
+        if(scrollTo == 0){
+          console.log("estoy en version movil");
+          scrollTo = $(".foot2").offset().top
+        }
 
+        $('html,body').animate({
+          scrollTop: scrollTo
+        },'slow')
+      })
+    })
   }
 }

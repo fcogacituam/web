@@ -38,8 +38,13 @@ h1,h2,h3{
     z-index: 1000;
 }
 .arrow-down {
-  z-index: 103;
+  z-index: 106;
+  bottom: 0%;
+}
+.arrow-down svg{
   color: #fff;
+  cursor: pointer;
+  z-index: 106;
 }
 .copyright {
     color: #fff;
