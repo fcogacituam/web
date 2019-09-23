@@ -42,7 +42,6 @@ export class UniversidadComponent implements OnInit {
   ngOnInit() {
     let aux: any = [];
     let self = this;
-    console.log("profiles",this.profiles);
     for (let i = 0; i < this.profiles.length; i++) {
       const el = this.profiles[i];
       if ($.inArray(el.page.description, aux) === -1) {

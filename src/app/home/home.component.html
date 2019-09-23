@@ -6,7 +6,7 @@
     </div>
     <div class="row px-4 px-md-2">
         <div class="col-lg-7 col-md-9 col-12 align-self-start">
-            <div class="p-4 p-md-2 p-xl-4 rounded bg-white why-choose-us-box animated animar fade left">
+            <div class="p-4 p-md-2 mb-4 p-xl-4 rounded bg-white why-choose-us-box animated animar fade left">
 
                 <div class="d-flex align-items-center mb-3">
                     <div>
@@ -96,6 +96,9 @@
         <div *ngFor="let item of destacados; let i = index">
             <a href=""><img class="px-3" src="{{item.image}}" alt="{{item.alt}}"></a>
         </div>
+    </div>
+    <div class="row my-4 d-flex justify-content-center animated animar fade up">
+        <a class="btn-slide-inverse menu-action-trigger" data-content="#destacados" >Ver Todos</a>
     </div>
 </div>
 

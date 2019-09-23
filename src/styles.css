@@ -67,6 +67,9 @@ h1,h2,h3{
     height: 100%;
     /* background: linear-gradient(rgb(35,28,52) 40%, rgba(35,28,52,.85)); */
 }
+.page{
+  /* overflow:hidden; */
+}
 .page-footer{
   background: rgb(35,28,52) ;
 }
@@ -162,9 +165,34 @@ h1,h2,h3{
   /* letter-spacing: 3px; */
      
 }
+.btn-slide-inverse{
+   background: rgb(0,117,201);
+   color: #fff!important;
+   transition: all linear .4s;
+   -webkit-transition: all linear .4s;
+   -moz-transition: all linear .4s;
+   -ms-transition: all linear .4s;
+   -o-transition: all linear .4s;
+   padding: 4px 15px;
+   position: relative;
+   text-transform: uppercase;
+   border: solid 0.1em #fff;
+   cursor: pointer;
+   font-weight: bolder;
+   display: inline-block;
+   margin:10px 0;
+}
+.btn-slide-inverse:hover,.btn-slide-inverse:focus{
+  box-shadow: inset 0 0 0 1em #fff!important;
+  color:rgb(0,117,201)!important; 
+  border: solid 0.1em rgb(0,117,201);
+}
+
 .btn-close svg{
   color: rgb(0,117,201)!important;
 }
+
+
 
 @keyframes zoomImg{
     from {

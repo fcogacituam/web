@@ -8,44 +8,8 @@ import * as $ from 'jquery';
 })
 export class HomeComponent implements OnInit {
   @Input() instance: number;
-  destacados: any = [
-    {
-      'image': 'assets/img/examples/banner_lateral2.png',
-      'alt': 'imagen 1',
-    },
-    {
-      'image': 'assets/img/examples/colchagua4.png',
-      'alt': 'imagen 2',
-    },
-    {
-      'image': 'assets/img/examples/concurso_p_blico.png',
-      'alt': 'imagen 3',
-    },
-    {
-      'image': 'assets/img/examples/LATERAL__1_.png',
-      'alt': 'imagen 3',
-    },
-    {
-      'image': 'assets/img/examples/PROTOCOLO.png',
-      'alt': 'imagen 3',
-    },
-    {
-      'image': 'assets/img/examples/tama_o__banner.png',
-      'alt': 'imagen 3',
-    },
-    {
-      'image': 'assets/img/examples/concurso_p_blico.png',
-      'alt': 'imagen 3',
-    },
-    {
-      'image': 'assets/img/examples/concurso_p_blico.png',
-      'alt': 'imagen 3',
-    },
-    {
-      'image': 'assets/img/examples/concurso_p_blico.png',
-      'alt': 'imagen 3',
-    }
-  ];
+  @Input() destacados:any;
+
 
   paneles : any = [
     {

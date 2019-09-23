@@ -26,6 +26,7 @@ a:hover{
 .container-submenu {
     width: 100%;
     z-index: -1;
+    display: none;
     height: auto;
     background: rgb(0,117,201);
     position: absolute;
@@ -65,7 +66,7 @@ a:hover{
     max-height: 400px;
 }
 
-.main-menu{    background: #231c34; }
+.main-menu{    background: #231c34; z-index: 100; width:75%;}
 .main-menu .main-title{
   color: #eaeaea;
 

@@ -21,6 +21,7 @@ import { VinculacionComponent } from './vinculacion/vinculacion.component';
 import { NoticiasYEventosComponent } from './noticias-y-eventos/noticias-y-eventos.component';
 import { DefaultComponent } from './default/default.component';
 import { ProfileComponent } from './profile/profile.component';
+import { DestacadosComponent } from './destacados/destacados.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { ProfileComponent } from './profile/profile.component';
     NoticiasYEventosComponent,
     DefaultComponent,
     ProfileComponent,
+    DestacadosComponent,
   ],
   imports: [
     BrowserModule,

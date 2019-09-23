@@ -1479,6 +1479,7 @@ spUtils.$document.ready(function () {
       right: position
     });
     if (content) {
+      console.log("CONTENT",content);
       $(Selector.PAGE).fadeOut('1000');
       $(content).fadeIn('1000');
       $(Selector.CLOSEBUTTON).fadeIn('slow');
@@ -1633,8 +1634,6 @@ spUtils.$document.ready(function () {
     var url = window.location.href;
     var hash = window.location.hash;
     var pageId
-    console.log("url", url)
-    console.log("hash", hash)
     if (document.getElementById(hash)) {
       pageId = $(hash).closest('.page').attr('id');
       
@@ -1643,10 +1642,7 @@ spUtils.$document.ready(function () {
     var currentPage = $('.page:visible').attr('id');
 
     if ($.inArray(window.location.hash, pages) > -1) {
-      if (!$(hash).length) {
-        $(".default-page").attr('id', hash);
-      }else{
-      }
+      
       window.location.hash = hash;
       goToPage(window.location.hash);
     } else if ($.inArray(pageId, pages) > -1) {

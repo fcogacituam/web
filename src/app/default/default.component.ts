@@ -9,23 +9,36 @@ export class DefaultComponent implements OnInit {
   @Input() paginas: any;
   @Input() profiles: any;
   @Input() color: string;
+  @Input() pageId: string;
+  @Input() type:string;
+  @Input() current:any={
+    'title':''
+  };
+  @Input() currentProfile: any;
+  
+
+  
   hash: string;
   title: string;
 
   profilePage:boolean= false;
-  currentProfile:any;
-  setProfileTrue(e) {
+  destacadosPage:boolean = false;
+
+
+  categories:any =[
+    "Profile"
+  ]
+
+
+  setProfileTrue() {
     this.profilePage = true;
   }
-  unsetProfile(e) {
+  unsetProfile() {
     this.profilePage = false;
   }
 
 
 
-  current: any ={
-    "title":''
-  };
   currentMenu:any={
     "title":''
   };
@@ -54,21 +67,43 @@ export class DefaultComponent implements OnInit {
   }
 
   ngOnInit() {
+    var type = this.type;
     let self=this;
+    // switch (type) {
+    //   case 'perfil':
+    //     this.setProfileTrue();
+    //     break;
+
+    //   default:
+    //     break;
+    // }
+    // this.pageId = 
+    // let self=this;
     $(window).on('hashchange', function () {
+      // clean all categories
+      cleanCategories();
       let newHash = window.location.hash;
-      console.log("LO CAPTURO DE AQUI",newHash);
+
       if(isProfile(newHash)){
-        self.setProfileTrue(newHash);
+        self.setProfileTrue();
       }else{
-        self.unsetProfile(newHash);
+        self.unsetProfile();
       }
+
+
     });
+
+    function cleanCategories(){
+      for (let i = 0; i < self.categories.length; i++) {
+        const el = self.categories[i];
+        self["unset"+el]();
+      }
+    }
+
 
     function isProfile(hash){
       for (let i = 0; i < self.profiles.length; i++) {
         const element = self.profiles[i];
-        console.log("Hash a revisar",hash);
         if(element.page.path == hash){
           console.log(element);
           self.currentProfile = element;

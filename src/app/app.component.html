@@ -85,7 +85,7 @@
             </div>
           <!-- <footer class="p-5"> d-block d-sm-block d-lg-none-->
           <div class="foot d-none d-lg-block">
-            <app-home instance="1"></app-home>
+            <app-home [destacados]="destacados" instance="1"></app-home>
             <app-footer></app-footer>
           </div>
           
@@ -114,7 +114,7 @@
         </div> 
       </div>
       <div class="foot2 d-block d-sm-block d-lg-none">
-        <app-home instance="2"></app-home>
+        <app-home [destacados]="destacados" instance="2"></app-home>
         <app-footer></app-footer>
       </div>
     </div>
@@ -135,7 +135,10 @@
       <app-admision [paginas]="paginas" [color]="colores[3]"></app-admision>
       <app-vinculacion [paginas]="paginas" [color]="colores[4]"></app-vinculacion>
       <app-noticias-y-eventos [paginas]="paginas" [color]="colores[5]"></app-noticias-y-eventos>
-      <app-default [paginas]="paginas" [color]="colores[0]" [profiles]="profiles"></app-default>
+      <ng-container *ngFor="let profile of profiles">
+        <app-default [type]="'perfil'" [profiles]="profiles" [currentProfile]="profile" [color]="colores[0]" [pageId]="profile.page.path.substring(1)" [paginas]="paginas"></app-default>
+      </ng-container>
+      <app-destacados [paginas]="paginas" [destacados]="destacados" [color]="colores[5]" ></app-destacados>
 
 
 

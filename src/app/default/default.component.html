@@ -1,4 +1,4 @@
-<div class="page position-absolute t-0 w-100 default-page" id="">
+<div class="page position-absolute t-0 w-100 default-page" [ngClass]="pageId" [attr.id]="pageId">
     <div class="row no-gutters minh-100vh">
         <div class="col-lg-9 order-1 order-lg-0 page-content pt-0 pt-lg-0">
 
@@ -14,8 +14,7 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-10">
                             <div class="mb-5 mb-lg-6">
-                                
-                                <ng-container *ngIf="profilePage;else default">
+                                 <ng-container *ngIf="profilePage">
                                    <app-profile [currentProfile]="currentProfile"></app-profile>
                                 </ng-container>
 
@@ -66,7 +65,7 @@
                     </div>
                     <h1 class="page-title">{{current.title}}</h1>
                 </div>
-                <app-menu-mobile *ngIf="showMenuMovil" [paginas]="currentMenu"></app-menu-mobile>
+                <!-- <app-menu-mobile *ngIf="showMenuMovil" [paginas]="currentMenu"></app-menu-mobile> -->
             </div>
     </div>
 </div>

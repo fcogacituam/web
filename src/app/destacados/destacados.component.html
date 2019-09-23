@@ -1,0 +1,94 @@
+<div class="page position-absolute t-0 w-100" id="destacados">
+    <div class="row no-gutters minh-100vh">
+        <div class="col-lg-9 order-1 order-lg-0 page-content pt-0 pt-lg-0">
+
+            <app-menu [paginas]="paginas" (current)="setCurrent($event)" (menu)="setMenu($event)"></app-menu>
+            <!-- <app-menu-mobile [paginas]="paginas" ></app-menu-mobile>  -->
+            <div class="accesibilidad ">
+                <app-inclusion display="up"></app-inclusion>
+            </div>
+            <!-- ============================================-->
+            <!-- <section> begin ============================-->
+            <section class="text-center pt-7 pt-xl-7 pt-xxl-8 text-center" id="boots4-projects">
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="mb-5 mb-lg-6">
+                            <div class="container">
+                                <div class="row justify-content-center p-5">
+                                    <div class="col-lg-7 text-center">
+                                        <h2 class="section-title animated animar fade up">Destacados</h2>
+                                        <hr class="hr-ornate" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div *ngFor="let item of destacados; let i = index" class="col-12 col-md-4 my-3 px-3 mx-0 destacado-item">
+                                        <a href=""><img class="img-fluid" src="{{item.image}}" alt="{{item.alt}}"></a>
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-md-12 text-center">
+                                        <ul class="pagination d-flex justify-content-center">
+                                            <li class="disabled"><a href="#">&laquo;</a></li>
+                                            <li class="active"><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">&raquo;</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="page-footer">
+                <div class="container-fluid copyright">
+                    <div class="row p-3">
+
+                        <div class="derechos col-12 col-md-6 order-2 order-md-1 text-center text-md-left p-1 p-md-0">
+                            Copyright 2019 Universidad de O'Higgins | Todos los derechos reservados.
+                        </div>
+                        <div class="redes col-12 col-md-6 order-1 order-md-2 text-center text-md-right p-1 p-md-0">
+                            <a href=""><i class="fab fa-facebook-square fa-2x"></i></a>
+                            <a href=""><i class="fab fa-twitter-square fa-2x"></i></a>
+                            <a href=""><i class="fab fa-instagram fa-2x"></i></a>
+                            <a href=""><i class="fab fa-youtube fa-2x"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div class="col-lg-3 col-12 t-0 order-0 order-lg-1 position-absolute position-lg-relative">
+            <div class="h-lg-100vh sticky-top py-4">
+                <span class="btn-close sticky-area p-1 m-1 p-lg-3 m-lg-3">
+                    <i class="fas fa-home fa-stack-1x fa-inverse d-lg-none"></i>
+                    <img class="d-none d-lg-block times" src="assets/img/times.svg" width="25" alt="" />
+                </span>
+                <div class="bg-holder d-flex d-sm-flex d-md-inline"
+                    style="background-image:url(https://picsum.photos/400/1005);">
+                    <div class="bg-color"
+                        [ngStyle]="{'background':'linear-gradient( rgb('+color+') 40%, rgba('+color+',.4) )'}"></div>
+                    <div class="menu-mobile d-flex d-lg-none ml-5">
+                        <div class="col-6">
+                            <img src="assets/img/examples/LOGO_CABECERA.png"
+                                class="sticky-area img-fluid mh-100 h-auto w-100 py-1" alt="Logo header">
+                        </div>
+                        <div class="col container-menu-mobile px-3" *ngIf="!showMenuMovil"
+                            (click)="openMenuMovil($event)">
+                            <i class="fas fa-bars fa-2x"></i>
+                        </div>
+                        <div class="col container-menu-mobile px-3" *ngIf="showMenuMovil" (click)="cerrarMenu($event)">
+                            <i class="fas fa-times fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- <h1 class="page-title">{{current.title}}</h1> -->
+            </div>
+            <app-menu-mobile *ngIf="showMenuMovil" [paginas]="currentMenu"></app-menu-mobile>
+        </div>
+    </div>
+</div>

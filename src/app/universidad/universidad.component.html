@@ -1,6 +1,6 @@
 <div class="page position-absolute t-0 w-100" id="universidad">
     <div class="row no-gutters minh-100vh">
-        <div class="col-lg-9 order-1 order-lg-0 page-content  pt-0 pt-lg-0">
+        <div class="col-lg-9 order-1 order-lg-0 page-content overflow-hidden pt-0 pt-lg-0">
             
             <app-menu [paginas]="paginas" (current)="setCurrent($event)" (menu)="setMenu($event)"></app-menu>
             <div class="accesibilidad">
@@ -9,7 +9,6 @@
             <!-- ============================================-->
             <!-- <section> begin ============================-->
             <section class="pt-5 pt-xl-7 pt-xxl-8">
-
                 <div class="container-fluid">
                     <div class="row justify-content-center pb-5" id="boots4-story">
                         <div class="col-lg-10">
@@ -25,13 +24,15 @@
                                     </div>
                                     <!--/.bg-holder-->
 
-                                    <div
-                                        class="position-absolute t-0 l-0 h-100 w-100 d-flex align-items-center justify-content-center">
+                                    <div class="position-absolute t-0 l-0 h-100 w-100 d-flex align-items-center justify-content-center">
                                         <a class="video-modal text-white"
                                             href="https://www.youtube.com/watch?v=J8Fht5yrD48" data-start="33"
-                                            data-end="59"><span class="fa-layers fa-fw fs-5"><i
-                                                    class="fas fa-circle"></i><i class="text-primary fas fa-play"
-                                                    data-fa-transform="shrink-12 right-0.5"></i></span></a>
+                                            data-end="59">
+                                            <span class="fa-layers fa-fw fs-5">
+                                                <i class="fas fa-circle"></i>
+                                                <i class="text-primary fas fa-play" data-fa-transform="shrink-12 right-0.5"></i>
+                                            </span>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-md-6 pl-3 pl-md-4">
@@ -109,6 +110,7 @@
                                     </div>
                                     <div class="row sortable-container">
                                         <ng-container  *ngFor="let profile of profiles">
+                                            <!-- <app-default [current]="profile" [color]="color" [pageId]="profile.page.path.substring(1)" ></app-default> -->
                                             <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3 mb-5 sortable-item perfil" [ngClass]="profile.page.description">
                                                 <img class="img-fluid rounded-circle" [src]="profile.image.src" width="140" alt="" />
                                                 <h5 class="mt-3 mb-1">

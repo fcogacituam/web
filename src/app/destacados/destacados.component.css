@@ -1,0 +1,15 @@
+.destacado-item a img{
+    transition: all ease .4s;
+    -webkit-transition: all ease .4s;
+    -moz-transition: all ease .4s;
+    -ms-transition: all ease .4s;
+    -o-transition: all ease .4s;
+}
+.destacado-item a:hover img{
+    box-shadow: 0px 0px 20px -4px rgba(0,0,0,.8);
+    transform: scale(1.2) translateY(-10px);
+    -webkit-transform: scale(1.2) translateY(-10px);
+    -moz-transform: scale(1.2) translateY(-10px);
+    -ms-transform: scale(1.2) translateY(-10px);
+    -o-transform: scale(1.2) translateY(-10px);
+}

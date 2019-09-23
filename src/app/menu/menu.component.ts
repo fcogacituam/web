@@ -27,12 +27,11 @@ export class MenuComponent implements OnInit {
   holdHover(e){
     this.clicked=true;
     if (e.target.lastChild != this.currentHold) {
-      console.log("cambiar de activo")
-      
       if (this.currentHold == "" || this.currentHold ==null){
         this.currentHold = e.target.lastChild;
         let height: number = $(e.target.parentNode).height();
         $(e.target.lastChild).css("margin-top", height - 2 + 'px');
+        $(e.target.lastChild).css("display", 'inline');
         $(e.target.lastChild).addClass("hovered animated slideInLeft");
 
       }else{
@@ -42,6 +41,7 @@ export class MenuComponent implements OnInit {
         this.currentHold = e.target.lastChild;
         let height: number = $(e.target.parentNode).height();
         $(e.target.lastChild).css("margin-top", height - 2 + 'px');
+        $(e.target.lastChild).css("display", 'inline');
         $(e.target.lastChild).addClass("hovered animated slideInLeft");
 
 
@@ -56,6 +56,7 @@ export class MenuComponent implements OnInit {
     if (this.clicked) {
       if (e.target.lastChild == this.currentHold) {
         $(e.target.lastChild).css("margin-top", height - 2 + 'px');
+        $(e.target.lastChild).css("display",'inline');
         $(e.target.lastChild).addClass("hovered");
       }else{
 
@@ -64,6 +65,7 @@ export class MenuComponent implements OnInit {
     }else{
       
       $(e.target.lastChild).css("margin-top", height - 2 + 'px');
+      $(e.target.lastChild).css("display", 'inline');
       $(e.target.lastChild).addClass("hovered animated slideInLeft");
 
     }
@@ -73,6 +75,7 @@ export class MenuComponent implements OnInit {
       
     }else{
       $(e.target.lastChild).removeClass("hovered animated slideInLeft");
+      $(e.target.lastChild).css("display", 'none');
     }
   }
 
